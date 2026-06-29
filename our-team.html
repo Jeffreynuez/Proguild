@@ -79,7 +79,7 @@ img{max-width:100%;display:block}
 /* ============================================================
    HEADER
    ============================================================ */
-.site-header{position:sticky;top:0;z-index:90;transition:box-shadow .3s var(--ease),background .3s var(--ease)}
+.site-header{position:sticky;top:calc(-1 * var(--uh,40px));z-index:90;transition:box-shadow .3s var(--ease),background .3s var(--ease)}
 .utility{background:var(--dark);color:rgba(255,255,255,.78);font-size:.82rem}
 .utility .wrap{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center;justify-content:flex-end;height:40px}
 .utility a{color:rgba(255,255,255,.82);display:inline-flex;align-items:center;gap:7px}
@@ -330,12 +330,12 @@ img{max-width:100%;display:block}
   .team-grid{grid-template-columns:repeat(3,1fr)}
   .cta-band .wrap{flex-direction:column;align-items:flex-start}
   .float-cta{display:none}
-  .mobile-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:85;background:#fff;border-top:1px solid var(--line);
+  .mobile-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:85;background:rgba(255,255,255,.82);backdrop-filter:saturate(150%) blur(12px);-webkit-backdrop-filter:saturate(150%) blur(12px);transition:background .3s var(--ease);border-top:1px solid var(--line);
     box-shadow:0 -6px 18px rgba(29,35,39,.10)}
-  .mobile-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;font-family:var(--font-heading);font-weight:700;font-size:.95rem}
+  .mobile-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:13px 8px;font-family:var(--font-heading);font-weight:700;font-size:.9rem;white-space:nowrap}
   .mobile-bar a.call{color:var(--accent)}
   .mobile-bar a.req{background:var(--accent);color:#fff}
-  body{padding-bottom:54px}
+  body{padding-bottom:64px}
 }
 @media(max-width:520px){
   .why-grid,.principles .pgrid,.svc-grid,.field.two{grid-template-columns:1fr}
@@ -401,9 +401,15 @@ body{overflow-x:hidden}
   .svc-grid{grid-template-columns:repeat(2,1fr);gap:14px}
   .service{min-height:0;padding:20px 16px}
   .service .ic{margin-bottom:10px}
-  .service .desc{display:none}
+  .service .desc{display:block;opacity:1;transform:none;font-size:.76rem;line-height:1.45;margin-top:6px}
   .site-footer .top{grid-template-columns:1fr;gap:24px;padding:46px 24px}
 }
+
+
+/* ===== fixes v3 (sticky nav + team links + bar) ===== */
+.team-grid .person{display:block;color:var(--ink);text-decoration:none}
+.tm-card{scroll-margin-top:96px}
+.mobile-bar.solid{background:#fff}
 
 </style>
 </head>
@@ -447,23 +453,23 @@ body{overflow-x:hidden}
     <p>The people behind ProGuild — committed to client success, clear communication, and quality in every interaction.</p>
   </div></section>
   <section class="section"><div class="wrap"><div class="tm-list">
-      <article class="tm-card reveal">
+      <article class="tm-card reveal" id="dannell-peterson">
         <div class="ph"><img src="https://res.cloudinary.com/dlgc3fj6w/image/fetch/f_auto,q_auto/https://proguildfm.com/wp-content/uploads/2023/09/Proguild-image7.jpg" alt="Dannell Peterson"></div>
         <div><h3 class="nm">Dannell Peterson</h3><div class="rl">Owner</div><p class="bio">Dannell Peterson brings over 15 years of experience in the restoration industry. She has developed a deep understanding of the field and cultivated strong, strategic relationships with key partners and service providers. Under her leadership, ProGuild has grown and thrived — driven by unwavering commitment, strategic vision, and a focus on collaboration and organizational unity.</p></div>
       </article>
-      <article class="tm-card reveal">
+      <article class="tm-card reveal" id="brionna-peterson">
         <div class="ph"><img src="https://res.cloudinary.com/dlgc3fj6w/image/fetch/f_auto,q_auto/https://proguildfm.com/wp-content/uploads/2025/08/Brionna-2000-cropped-no-BG.png" alt="Brionna Peterson"></div>
         <div><h3 class="nm">Brionna Peterson</h3><div class="rl">Client Success</div><p class="bio">Brionna has been with ProGuild since 2022, playing a key role in helping the company grow from the beginning. She works closely with clients and team members to keep projects on track and every detail handled with care. Known for her friendly leadership style and strong problem-solving, she makes sure every client and provider feels supported and confident.</p></div>
       </article>
-      <article class="tm-card reveal">
+      <article class="tm-card reveal" id="analisa-peterson">
         <div class="ph"><img src="https://res.cloudinary.com/dlgc3fj6w/image/fetch/f_auto,q_auto/https://proguildfm.com/wp-content/uploads/2025/08/thumbnail_analisa.png" alt="Analisa Peterson"></div>
         <div><h3 class="nm">Analisa Peterson</h3><div class="rl">Client Success</div><p class="bio">Analisa lives by the mindset of taking life one step at a time and is a proud mama who values quality time with family. Since joining ProGuild she has been committed to client success and building strong, lasting relationships, believing that strong client and vendor partnerships are the key to a successful business.</p></div>
       </article>
-      <article class="tm-card reveal">
+      <article class="tm-card reveal" id="lorie-clapano">
         <div class="ph"><img src="https://res.cloudinary.com/dlgc3fj6w/image/fetch/f_auto,q_auto/https://proguildfm.com/wp-content/uploads/2025/08/Lories-photo.png" alt="Lorie Clapano"></div>
         <div><h3 class="nm">Lorie Clapano</h3><div class="rl">Development Team Lead</div><p class="bio">As the go-to contact for service requests, Lorie is committed to delivering a smooth, stress-free experience for every client — ensuring clear communication, timely updates, and attention to detail from start to finish. She believes strong partnerships are built on consistency, transparency, and quality.</p></div>
       </article>
-      <article class="tm-card reveal">
+      <article class="tm-card reveal" id="edward-waldrop">
         <div class="ph"><img src="https://res.cloudinary.com/dlgc3fj6w/image/fetch/f_auto,q_auto/https://proguildfm.com/wp-content/uploads/2025/08/thumbnail_Image.png" alt="Edward Waldrop"></div>
         <div><h3 class="nm">Edward Waldrop</h3><div class="rl">Chief Financial Officer</div><p class="bio">Ed is a military veteran with extensive experience in small business operations and inventory accounting. His disciplined background and hands-on approach make him reliable and detail-oriented in every role, bringing a strong work ethic and commitment to excellence developed through years of service and business experience.</p></div>
       </article>
@@ -513,6 +519,11 @@ body{overflow-x:hidden}
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){reveals.forEach(function(el){el.classList.add('in');});}
   else{var ro=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');ro.unobserve(en.target);}});},{threshold:0.12});reveals.forEach(function(el){ro.observe(el);});}
 })();
+</script>
+<script>
+/* --uh from utility height (so only the navbar pins) */
+(function(){var u=document.querySelector('.utility');function s(){if(u)document.documentElement.style.setProperty('--uh',u.offsetHeight+'px');}s();window.addEventListener('resize',s);window.addEventListener('load',s);})();
+(function(){var b=document.querySelector('.mobile-bar');if(!b)return;function c(){b.classList.toggle('solid',(window.innerHeight+window.scrollY)>=document.documentElement.scrollHeight-2);}window.addEventListener('scroll',c,{passive:true});window.addEventListener('resize',c);window.addEventListener('load',c);c();})();
 </script>
 </body>
 </html>
