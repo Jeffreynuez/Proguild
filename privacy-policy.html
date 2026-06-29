@@ -420,6 +420,13 @@ body{overflow-x:hidden}
 .pg-ring{border-radius:50%;border:2px solid var(--rc,rgba(56,126,118,.16))}
 .pg-sq{border-radius:16px;background:var(--sc,rgba(146,218,210,.16))}
 
+
+/* ===== angular ambient shapes ===== */
+.pg-tri{clip-path:polygon(50% 0,100% 100%,0 100%)}
+.pg-diamond{clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.pg-hex{clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.pg-para{clip-path:polygon(28% 0,100% 0,72% 100%,0 100%)}
+
 </style>
 </head>
 <body>
@@ -456,7 +463,7 @@ body{overflow-x:hidden}
   </div>
 </header>
 <main id="top">
-  <section class="page-hero sec-shapes"><span class="pg-shape pg-blob" data-speed="40" style="width:240px;height:240px;top:-60px;right:-50px;--sc:rgba(146,218,210,.16)"></span><span class="pg-shape pg-ring" data-speed="26" style="width:130px;height:130px;bottom:-26px;left:6%;--rc:rgba(146,218,210,.22)"></span><div class="wrap reveal"><h1>Privacy Policy</h1>
+  <section class="page-hero sec-shapes"><span class="pg-shape pg-tri" data-speed="120" data-rot="8" style="width:380px;height:380px;top:-130px;right:-100px;background:rgba(146,218,210,0.15)"></span><span class="pg-shape pg-diamond" data-speed="-95" data-rot="0" style="width:280px;height:280px;bottom:-120px;left:-80px;background:rgba(146,218,210,0.17)"></span><span class="pg-shape pg-hex" data-speed="80" data-rot="0" data-axis="x" style="width:260px;height:260px;top:18%;right:-120px;background:rgba(146,218,210,0.12)"></span><span class="pg-shape pg-para" data-speed="140" data-rot="-6" style="width:230px;height:230px;bottom:10%;left:12%;background:rgba(146,218,210,0.13)"></span><div class="wrap reveal"><h1>Privacy Policy</h1>
     <p>How Proguild Facility Management collects, uses, and protects your information.</p></div></section>
   <section class="section"><div class="wrap prose reveal">
     <p>At Proguild Facility Management, accessible from proguildfm.com, the privacy of our visitors is a priority. This document explains the types of information we collect and how we use it.</p>
@@ -525,19 +532,27 @@ body{overflow-x:hidden}
 (function(){var b=document.querySelector('.mobile-bar');if(!b)return;function c(){b.classList.toggle('solid',(window.innerHeight+window.scrollY)>=document.documentElement.scrollHeight-2);}window.addEventListener('scroll',c,{passive:true});window.addEventListener('resize',c);window.addEventListener('load',c);c();})();
 </script>
 <script>
-/* ambient shape parallax */
+/* ambient shape parallax v2 (size + multi-direction) */
 (function(){
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var shapes=[].slice.call(document.querySelectorAll('.pg-shape'));
   if(!shapes.length) return;
   var vh=window.innerHeight, ticking=false;
-  function cache(){ shapes.forEach(function(s){ s.style.transform='none'; s._base=s.getBoundingClientRect().top+window.scrollY+s.offsetHeight/2; }); }
-  function upd(){ var vc=window.scrollY+vh/2; shapes.forEach(function(s){ var rel=(s._base-vc)/vh; var sp=parseFloat(s.dataset.speed||'40'); var rot=s.dataset.rot||0; s.style.transform='translate3d(0,'+(-rel*sp).toFixed(1)+'px,0) rotate('+rot+'deg)'; }); ticking=false; }
-  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } }
+  function cache(){ shapes.forEach(function(s){ s.style.transform='none'; var r=s.getBoundingClientRect(); s._base=r.top+window.scrollY+r.height/2; }); }
+  function upd(){ var vc=window.scrollY+vh/2;
+    shapes.forEach(function(s){
+      var rel=(s._base-vc)/vh;
+      var sp=parseFloat(s.dataset.speed||'90');
+      var rot=parseFloat(s.dataset.rot||0);
+      var d=-rel*sp, x=s.dataset.axis==='x'?d:0, y=s.dataset.axis==='x'?0:d;
+      s.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0) rotate('+rot+'deg)';
+    });
+    ticking=false;
+  }
+  function onScroll(){ if(!ticking){ticking=true;requestAnimationFrame(upd);} }
   function reset(){ vh=window.innerHeight; cache(); upd(); }
   window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',reset);
-  window.addEventListener('load',reset);
+  window.addEventListener('resize',reset); window.addEventListener('load',reset);
   cache(); upd();
 })();
 </script>
