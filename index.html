@@ -84,9 +84,9 @@ img{max-width:100%;display:block}
 .utility .wrap{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center;justify-content:flex-end;height:40px}
 .utility a{color:rgba(255,255,255,.82);display:inline-flex;align-items:center;gap:7px}
 .utility a:hover{color:var(--accent-light)}
-.navbar{background:rgba(255,255,255,.96);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);transition:padding .3s var(--ease)}
+.navbar{background:rgba(255,255,255,.96);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);transition:padding .3s var(--ease),background .35s var(--ease),backdrop-filter .35s var(--ease)}
 .navbar .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;transition:height .3s var(--ease)}
-.site-header.condensed .navbar{box-shadow:0 6px 22px rgba(29,35,39,.10)}
+.site-header.condensed .navbar{background:rgba(255,255,255,.55);backdrop-filter:saturate(170%) blur(16px);-webkit-backdrop-filter:saturate(170%) blur(16px);box-shadow:0 6px 22px rgba(29,35,39,.10)}.site-header.condensed .utility{background:rgba(29,35,39,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .site-header.condensed .navbar .wrap{height:62px}
 .logo{display:flex;align-items:center;gap:11px}
 .logo .mark{width:38px;height:38px;border-radius:11px;background:var(--accent);display:grid;place-content:center;color:#fff;flex:0 0 auto}
@@ -97,9 +97,9 @@ img{max-width:100%;display:block}
 .nav-links a:hover{color:var(--accent)}
 .nav-cta{display:flex;align-items:center;gap:16px}
 .burger{display:none;background:none;border:none;color:var(--ink);cursor:pointer;padding:6px}
-.mobile-menu{display:none;background:#fff;border-bottom:1px solid var(--line);padding:8px 24px 20px}
-.mobile-menu a{display:block;padding:13px 0;font-weight:600;border-bottom:1px solid var(--line)}
-.mobile-menu .btn{margin-top:16px;width:100%;justify-content:center}
+.mobile-menu{display:none;position:absolute;top:100%;right:14px;width:min(78vw,290px);background:rgba(29,35,39,.92);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border:1px solid rgba(255,255,255,.14);border-radius:14px;box-shadow:0 20px 44px rgba(0,0,0,.32);padding:12px 18px 18px}
+.mobile-menu a{display:block;padding:13px 2px;font-weight:600;color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}.mobile-menu a:hover{color:var(--accent-light)}
+.mobile-menu .btn{margin-top:16px;width:100%;justify-content:center;border:none;border-bottom:none;background:var(--accent);color:#fff;box-sizing:border-box}
 
 /* ============================================================
    HERO  (parallax)
@@ -375,6 +375,16 @@ body{overflow-x:hidden}
   .cta-band .actions .btn{width:100%;justify-content:center}
   .tm-card{padding:22px}
   .page-hero{padding:64px 0 48px}
+}
+
+
+/* ===== mobile fixes v2 (menu/services/footer/nav) ===== */
+@media(max-width:600px){
+  .svc-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .service{min-height:0;padding:20px 16px}
+  .service .ic{margin-bottom:10px}
+  .service .desc{display:none}
+  .site-footer .top{grid-template-columns:1fr;gap:24px;padding:46px 24px}
 }
 
 </style>
