@@ -411,6 +411,15 @@ body{overflow-x:hidden}
 .tm-card{scroll-margin-top:96px}
 .mobile-bar.solid{background:#fff}
 
+
+/* ===== ambient parallax shapes ===== */
+.sec-shapes{position:relative;overflow:hidden}
+.sec-shapes>.wrap{position:relative;z-index:1}
+.pg-shape{position:absolute;z-index:0;pointer-events:none;will-change:transform}
+.pg-blob{border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--sc,rgba(146,218,210,.20)),transparent 70%)}
+.pg-ring{border-radius:50%;border:2px solid var(--rc,rgba(56,126,118,.16))}
+.pg-sq{border-radius:16px;background:var(--sc,rgba(146,218,210,.16))}
+
 </style>
 </head>
 <body>
@@ -447,7 +456,7 @@ body{overflow-x:hidden}
   </div>
 </header>
 <main id="top">
-  <section class="page-hero"><div class="wrap reveal"><h1>Privacy Policy</h1>
+  <section class="page-hero sec-shapes"><span class="pg-shape pg-blob" data-speed="40" style="width:240px;height:240px;top:-60px;right:-50px;--sc:rgba(146,218,210,.16)"></span><span class="pg-shape pg-ring" data-speed="26" style="width:130px;height:130px;bottom:-26px;left:6%;--rc:rgba(146,218,210,.22)"></span><div class="wrap reveal"><h1>Privacy Policy</h1>
     <p>How Proguild Facility Management collects, uses, and protects your information.</p></div></section>
   <section class="section"><div class="wrap prose reveal">
     <p>At Proguild Facility Management, accessible from proguildfm.com, the privacy of our visitors is a priority. This document explains the types of information we collect and how we use it.</p>
@@ -514,6 +523,23 @@ body{overflow-x:hidden}
 /* --uh from utility height (so only the navbar pins) */
 (function(){var u=document.querySelector('.utility');function s(){if(u)document.documentElement.style.setProperty('--uh',u.offsetHeight+'px');}s();window.addEventListener('resize',s);window.addEventListener('load',s);})();
 (function(){var b=document.querySelector('.mobile-bar');if(!b)return;function c(){b.classList.toggle('solid',(window.innerHeight+window.scrollY)>=document.documentElement.scrollHeight-2);}window.addEventListener('scroll',c,{passive:true});window.addEventListener('resize',c);window.addEventListener('load',c);c();})();
+</script>
+<script>
+/* ambient shape parallax */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var shapes=[].slice.call(document.querySelectorAll('.pg-shape'));
+  if(!shapes.length) return;
+  var vh=window.innerHeight, ticking=false;
+  function cache(){ shapes.forEach(function(s){ s.style.transform='none'; s._base=s.getBoundingClientRect().top+window.scrollY+s.offsetHeight/2; }); }
+  function upd(){ var vc=window.scrollY+vh/2; shapes.forEach(function(s){ var rel=(s._base-vc)/vh; var sp=parseFloat(s.dataset.speed||'40'); var rot=s.dataset.rot||0; s.style.transform='translate3d(0,'+(-rel*sp).toFixed(1)+'px,0) rotate('+rot+'deg)'; }); ticking=false; }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } }
+  function reset(){ vh=window.innerHeight; cache(); upd(); }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',reset);
+  window.addEventListener('load',reset);
+  cache(); upd();
+})();
 </script>
 </body>
 </html>

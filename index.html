@@ -106,7 +106,6 @@ img{max-width:100%;display:block}
    ============================================================ */
 .hero{position:relative;overflow:hidden;background:var(--dark);color:#fff;min-height:640px;display:flex;align-items:center}
 .hero-bg{position:absolute;inset:-12% 0 0 0;height:124%;
-  background-image:url(https://res.cloudinary.com/dlgc3fj6w/image/fetch/f_auto,q_auto/https://proguildfm.com/wp-content/uploads/2023/09/Proguild-homepage-hero-background.jpg);
   background-size:cover;background-position:center;will-change:transform;z-index:0}
 .hero-overlay{position:absolute;inset:0;z-index:1;
   background:linear-gradient(100deg,rgba(29,35,39,.95) 0%,rgba(29,35,39,.74) 52%,rgba(44,107,99,.42) 100%)}
@@ -393,6 +392,20 @@ body{overflow-x:hidden}
 .tm-card{scroll-margin-top:96px}
 .mobile-bar.solid{background:#fff}
 
+
+/* ===== ambient parallax shapes ===== */
+.sec-shapes{position:relative;overflow:hidden}
+.sec-shapes>.wrap{position:relative;z-index:1}
+.pg-shape{position:absolute;z-index:0;pointer-events:none;will-change:transform}
+.pg-blob{border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--sc,rgba(146,218,210,.20)),transparent 70%)}
+.pg-ring{border-radius:50%;border:2px solid var(--rc,rgba(56,126,118,.16))}
+.pg-sq{border-radius:16px;background:var(--sc,rgba(146,218,210,.16))}
+
+/* ===== hero ken-burns (separate layer so scroll-parallax still works) ===== */
+.hero-bg::before{content:"";position:absolute;inset:-5%;background-image:url(https://res.cloudinary.com/dlgc3fj6w/image/fetch/f_auto,q_auto/https://proguildfm.com/wp-content/uploads/2023/09/Proguild-homepage-hero-background.jpg);background-size:cover;background-position:center;animation:heroPan 34s ease-in-out infinite alternate;will-change:transform}
+@keyframes heroPan{0%{transform:scale(1.05) translate(0,0)}100%{transform:scale(1.16) translate(-2.5%,-2%)}}
+@media(prefers-reduced-motion:reduce){.hero-bg::before{animation:none;transform:scale(1.04)}}
+
 </style>
 </head>
 <body>
@@ -473,7 +486,7 @@ body{overflow-x:hidden}
 </section>
 
 <!-- ============================== MISSION ============================== -->
-<section class="section mission">
+<section class="section mission sec-shapes"><span class="pg-shape pg-blob" data-speed="50" style="width:230px;height:230px;top:-60px;right:-50px;--sc:rgba(146,218,210,.20)"></span><span class="pg-shape pg-ring" data-speed="30" style="width:140px;height:140px;bottom:8%;left:-44px"></span>
   <div class="wrap">
     <div class="grid">
       <div class="reveal">
@@ -489,7 +502,7 @@ body{overflow-x:hidden}
 </section>
 
 <!-- ============================== WHY CHOOSE US ============================== -->
-<section class="section why">
+<section class="section why sec-shapes"><span class="pg-shape pg-sq" data-speed="46" data-rot="14" style="width:120px;height:120px;top:46px;right:6%;--sc:rgba(56,126,118,.10)"></span><span class="pg-shape pg-blob" data-speed="28" style="width:210px;height:210px;bottom:-60px;left:-50px;--sc:rgba(146,218,210,.18)"></span>
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="eyebrow">Why Choose Us</span>
@@ -570,7 +583,7 @@ body{overflow-x:hidden}
 </section>
 
 <!-- ============================== COVERAGE MAP ============================== -->
-<section class="section coverage" id="coverage">
+<section class="section coverage sec-shapes" id="coverage"><span class="pg-shape pg-ring" data-speed="42" style="width:170px;height:170px;top:-40px;left:7%"></span><span class="pg-shape pg-blob" data-speed="26" style="width:240px;height:240px;bottom:-70px;right:-50px;--sc:rgba(146,218,210,.20)"></span>
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="eyebrow">Service Coverage</span>
@@ -639,7 +652,7 @@ body{overflow-x:hidden}
 </section>
 
 <!-- ============================== TEAM TEASER ============================== -->
-<section class="section team" id="team">
+<section class="section team sec-shapes" id="team"><span class="pg-shape pg-sq" data-speed="40" data-rot="-10" style="width:120px;height:120px;top:-26px;left:5%;--sc:rgba(146,218,210,.16)"></span><span class="pg-shape pg-blob" data-speed="52" style="width:210px;height:210px;bottom:-60px;right:-44px;--sc:rgba(146,218,210,.18)"></span>
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="eyebrow">Our Team</span>
@@ -672,7 +685,7 @@ body{overflow-x:hidden}
 </section>
 
 <!-- ============================== CONTACT ============================== -->
-<section class="section contact" id="contact">
+<section class="section contact sec-shapes" id="contact"><span class="pg-shape pg-blob" data-speed="44" style="width:260px;height:260px;top:-70px;right:-60px;--sc:rgba(146,218,210,.16)"></span><span class="pg-shape pg-ring" data-speed="28" style="width:150px;height:150px;bottom:8%;left:-40px;--rc:rgba(146,218,210,.24)"></span>
   <div class="wrap">
     <div class="grid">
       <div class="reveal">
@@ -957,6 +970,23 @@ const COVERAGE = {
 /* --uh from utility height (so only the navbar pins) */
 (function(){var u=document.querySelector('.utility');function s(){if(u)document.documentElement.style.setProperty('--uh',u.offsetHeight+'px');}s();window.addEventListener('resize',s);window.addEventListener('load',s);})();
 (function(){var b=document.querySelector('.mobile-bar');if(!b)return;function c(){b.classList.toggle('solid',(window.innerHeight+window.scrollY)>=document.documentElement.scrollHeight-2);}window.addEventListener('scroll',c,{passive:true});window.addEventListener('resize',c);window.addEventListener('load',c);c();})();
+</script>
+<script>
+/* ambient shape parallax */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var shapes=[].slice.call(document.querySelectorAll('.pg-shape'));
+  if(!shapes.length) return;
+  var vh=window.innerHeight, ticking=false;
+  function cache(){ shapes.forEach(function(s){ s.style.transform='none'; s._base=s.getBoundingClientRect().top+window.scrollY+s.offsetHeight/2; }); }
+  function upd(){ var vc=window.scrollY+vh/2; shapes.forEach(function(s){ var rel=(s._base-vc)/vh; var sp=parseFloat(s.dataset.speed||'40'); var rot=s.dataset.rot||0; s.style.transform='translate3d(0,'+(-rel*sp).toFixed(1)+'px,0) rotate('+rot+'deg)'; }); ticking=false; }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } }
+  function reset(){ vh=window.innerHeight; cache(); upd(); }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',reset);
+  window.addEventListener('load',reset);
+  cache(); upd();
+})();
 </script>
 </body>
 </html>
