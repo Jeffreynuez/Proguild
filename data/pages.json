@@ -1,335 +1,335 @@
 {
-  "global": {
-    "seoTitle": "Proguild Facility Management — Safe, Innovative, Socially Responsible",
-    "seoDesc": "One dependable partner for every building system — commercial facility management and 24/7 emergency repair across Arizona.",
-    "contact": {
-      "address": "101 N Colorado St, Ste 1201, Chandler, AZ 85225",
-      "addressLine1": "101 N Colorado St, Ste 1201",
-      "addressLine2": "Chandler, AZ 85225",
-      "phone": "844-777-3331",
-      "phoneHref": "8447773331",
-      "email": "dannell@proguildfm.com",
-      "mapUrl": "https://maps.google.com"
-    },
-    "nav": [
-      {
-        "label": "Home",
-        "href": "#top"
-      },
-      {
-        "label": "Our Team",
-        "href": "our-team.html"
-      },
-      {
-        "label": "Our Services",
-        "href": "#services"
-      }
-    ],
-    "ctaLabel": "Get in Touch",
-    "footer": {
-      "blurb": "Commercial facility management & emergency repair. Safe, innovative, and socially responsible service across Arizona.",
-      "linkedin": "https://linkedin.com",
-      "copyright": "Proguild Facility Management. All rights reserved.",
-      "location": "Chandler, Arizona"
-    }
+ "global": {
+  "seoTitle": "Proguild Facility Management — Safe, Innovative, Socially Responsible",
+  "seoDesc": "One dependable partner for every building system — commercial facility management and 24/7 emergency repair across Arizona.",
+  "contact": {
+   "address": "101 N Colorado St, Ste 1201, Chandler, AZ 85225",
+   "addressLine1": "101 N Colorado St, Ste 1201",
+   "addressLine2": "Chandler, AZ 85225",
+   "phone": "844-777-3331",
+   "phoneHref": "8447773331",
+   "email": "dannell@proguildfm.com",
+   "mapUrl": "https://maps.google.com"
   },
-  "home": {
-    "hero": {
-      "eyebrow": "Commercial Facility Management · Chandler, AZ",
-      "title": "Safe, Innovative, and Socially Responsible Facility Management Services",
-      "body": "One dependable partner for every building system — maintenance and emergency repair handled quickly, cleanly, and by people you can trust on site.",
-      "cta1": "Request Service",
-      "cta1Href": "#contact",
-      "cta2": "Explore Services",
-      "cta2Href": "#services",
-      "bg": "CDN:image/upload/f_auto,q_auto/proguild/hero"
-    },
-    "stats": [
-      {
-        "num": "5",
-        "suffix": " min",
-        "label": "To acknowledge a work order"
-      },
-      {
-        "num": "30",
-        "suffix": " min",
-        "label": "ETA provided after acknowledgment"
-      },
-      {
-        "num": "15",
-        "suffix": "+ yrs",
-        "label": "Serving Arizona businesses"
-      },
-      {
-        "num": "24",
-        "suffix": "/7",
-        "label": "Emergency response coverage"
-      }
-    ],
-    "quote": {
-      "text": "\"We treat every property as if it were our own — responsive when it matters, meticulous in the details, and always accountable for the result.\"",
-      "cite": "— Don Walden Adams"
-    },
-    "mission": {
-      "eyebrow": "Mission & Core Values",
-      "title": "Dependable service, delivered with integrity",
-      "body1": "Proguild exists to keep commercial properties safe, functional, and welcoming. We combine skilled trades, modern coordination, and a genuine sense of responsibility to the people and communities our buildings serve.",
-      "body2": "Whether it's a midnight emergency or a planned preventive program, we show up prepared, communicate clearly, and finish the job right — because the trust of the people we work for is the only foundation worth building on."
-    },
-    "why": {
-      "eyebrow": "Why Choose Us",
-      "title": "A promise you can set your watch by",
-      "items": [
-        {
-          "icon": "badge-check",
-          "title": "Professional service",
-          "text": "Licensed, insured, uniformed crews who respect your property and your tenants."
-        },
-        {
-          "icon": "message-square-text",
-          "title": "Consistent updates",
-          "text": "Clear communication from dispatch to completion — you're never left guessing."
-        },
-        {
-          "icon": "timer",
-          "title": "Acknowledged in 5 minutes",
-          "text": "Every work order is confirmed within five minutes, day or night."
-        },
-        {
-          "icon": "clock",
-          "title": "ETA within 30 minutes",
-          "text": "A reliable arrival window provided within half an hour of your request."
-        }
-      ]
-    },
-    "principles": {
-      "eyebrow": "Company Principles",
-      "title": "What we stand on",
-      "items": [
-        {
-          "icon": "heart-handshake",
-          "title": "Faith",
-          "body": "We lead with conviction and do what's right even when no one is watching."
-        },
-        {
-          "icon": "users",
-          "title": "Customer Focus",
-          "body": "Your priorities set ours. Every decision starts with the people we serve."
-        },
-        {
-          "icon": "combine",
-          "title": "Synergy",
-          "body": "One coordinated team across every trade, working better together than apart."
-        },
-        {
-          "icon": "messages-square",
-          "title": "Effective Communication",
-          "body": "Clear, timely, honest updates at every step — no surprises."
-        },
-        {
-          "icon": "key-round",
-          "title": "Empowerment",
-          "body": "We equip our people to make smart calls and own the outcome."
-        },
-        {
-          "icon": "award",
-          "title": "Excellence",
-          "body": "Good enough never is. We hold every job to a standard we'd accept ourselves."
-        }
-      ]
-    },
-    "process": {
-      "eyebrow": "How It Works",
-      "title": "From request to resolved",
-      "steps": [
-        {
-          "title": "Submit a work order",
-          "body": "Call, email, or send a request — whatever's fastest for you."
-        },
-        {
-          "title": "Acknowledged in 5 min",
-          "body": "We confirm receipt within five minutes, any hour."
-        },
-        {
-          "title": "ETA within 30 min",
-          "body": "You get a dependable on-site arrival window."
-        },
-        {
-          "title": "Completed with updates",
-          "body": "Work done right, with status updates through to sign-off."
-        }
-      ]
-    },
-    "services": {
-      "eyebrow": "Our Services",
-      "title": "Total facility care, under one roof",
-      "filters": [
-        {
-          "label": "All",
-          "cat": "all"
-        },
-        {
-          "label": "Maintenance",
-          "cat": "maintenance"
-        },
-        {
-          "label": "Emergency",
-          "cat": "emergency"
-        },
-        {
-          "label": "Specialty",
-          "cat": "specialty"
-        }
-      ],
-      "items": [
-        {
-          "cat": "emergency",
-          "icon": "wrench",
-          "title": "Plumbing",
-          "desc": "Leaks, fixtures, repipes, and 24/7 emergency response."
-        },
-        {
-          "cat": "emergency",
-          "icon": "zap",
-          "title": "Electrical",
-          "desc": "Repairs, troubleshooting, and code-compliant fixes."
-        },
-        {
-          "cat": "maintenance",
-          "icon": "wind",
-          "title": "HVAC",
-          "desc": "Heating, cooling, and preventive maintenance plans."
-        },
-        {
-          "cat": "specialty",
-          "icon": "key-round",
-          "title": "Locksmith",
-          "desc": "Rekeys, hardware, and secure access control."
-        },
-        {
-          "cat": "maintenance",
-          "icon": "layout-grid",
-          "title": "Flooring",
-          "desc": "Repair, refinish, and full replacement."
-        },
-        {
-          "cat": "specialty",
-          "icon": "construction",
-          "title": "Parking Lot & Asphalt",
-          "desc": "Sealcoating, striping, and pothole repair."
-        },
-        {
-          "cat": "specialty",
-          "icon": "door-open",
-          "title": "Overhead Doors",
-          "desc": "Service, spring replacement, and adjustments."
-        },
-        {
-          "cat": "emergency",
-          "icon": "shield",
-          "title": "Emergency Board-Ups",
-          "desc": "Rapid storefront securing after break-ins or damage."
-        },
-        {
-          "cat": "specialty",
-          "icon": "lightbulb",
-          "title": "Lighting Retrofits",
-          "desc": "Energy-efficient interior and exterior lighting."
-        },
-        {
-          "cat": "specialty",
-          "icon": "paint-roller",
-          "title": "Building Refreshes",
-          "desc": "Paint, finishes, and cosmetic improvements."
-        },
-        {
-          "cat": "maintenance",
-          "icon": "hammer",
-          "title": "General Maintenance",
-          "desc": "Handyman work and ongoing upkeep of all kinds."
-        },
-        {
-          "cat": "maintenance",
-          "icon": "clipboard-check",
-          "title": "Preventive Programs",
-          "desc": "Scheduled inspections that catch issues early."
-        }
-      ]
-    },
-    "coverage": {
-      "eyebrow": "Service Coverage",
-      "title": "Where we show up",
-      "lead": "Hover or tap a state to see its coverage level. Arizona is home — and where we're strongest.",
-      "tiers": [
-        {
-          "id": "strong",
-          "label": "Strong Coverage",
-          "color": "#387E76"
-        },
-        {
-          "id": "average",
-          "label": "Average Coverage",
-          "color": "#92DAD2"
-        },
-        {
-          "id": "none",
-          "label": "No Coverage",
-          "color": "#e6ebea"
-        }
-      ],
-      "states": [
-        {
-          "code": "AZ",
-          "tier": "strong"
-        },
-        {
-          "code": "NV",
-          "tier": "strong"
-        },
-        {
-          "code": "NM",
-          "tier": "strong"
-        },
-        {
-          "code": "CA",
-          "tier": "average"
-        },
-        {
-          "code": "UT",
-          "tier": "average"
-        },
-        {
-          "code": "CO",
-          "tier": "average"
-        },
-        {
-          "code": "TX",
-          "tier": "average"
-        },
-        {
-          "code": "OK",
-          "tier": "average"
-        }
-      ]
-    },
-    "teamTeaser": {
-      "eyebrow": "Our Team",
-      "title": "The people behind the promise",
-      "ctaLabel": "Meet the full team"
-    },
-    "cta": {
-      "title": "Need facility service? We respond fast.",
-      "sub": "Acknowledged in 5 minutes. ETA within 30. Any building system, any hour.",
-      "phone": "844-777-3331",
-      "buttonLabel": "Request Service"
-    },
-    "contact": {
-      "eyebrow": "Get in Touch",
-      "title": "Tell us what your building needs",
-      "lead": "Send a request and a coordinator will follow up promptly. For active emergencies, call us — someone always answers.",
-      "successTitle": "Request received.",
-      "successText": "Thanks — a coordinator will reach out shortly.",
-      "formAction": "https://formspree.io/f/REPLACE_WITH_FORM_ID"
-    }
+  "nav": [
+   {
+    "label": "Home",
+    "href": "#top"
+   },
+   {
+    "label": "Our Team",
+    "href": "our-team.html"
+   },
+   {
+    "label": "Our Services",
+    "href": "#services"
+   }
+  ],
+  "ctaLabel": "Get in Touch",
+  "footer": {
+   "blurb": "Commercial facility management & emergency repair. Safe, innovative, and socially responsible service across Arizona.",
+   "linkedin": "https://linkedin.com",
+   "copyright": "Proguild Facility Management. All rights reserved.",
+   "location": "Chandler, Arizona"
   }
+ },
+ "home": {
+  "hero": {
+   "eyebrow": "Commercial Facility Management · Chandler, AZ",
+   "title": "Safe, Innovative, and Socially Responsible Facility Management Services",
+   "body": "One dependable partner for every building system — maintenance and emergency repair handled quickly, cleanly, and by people you can trust on site.",
+   "cta1": "Request Service",
+   "cta1Href": "#contact",
+   "cta2": "Explore Services",
+   "cta2Href": "#services",
+   "bg": "CDN:image/upload/f_auto,q_auto/proguild/hero"
+  },
+  "stats": [
+   {
+    "num": "5",
+    "suffix": " min",
+    "label": "To acknowledge a work order"
+   },
+   {
+    "num": "30",
+    "suffix": " min",
+    "label": "ETA provided after acknowledgment"
+   },
+   {
+    "num": "15",
+    "suffix": "+ yrs",
+    "label": "Serving Arizona businesses"
+   },
+   {
+    "num": "24",
+    "suffix": "/7",
+    "label": "Emergency response coverage"
+   }
+  ],
+  "quote": {
+   "text": "\"We treat every property as if it were our own — responsive when it matters, meticulous in the details, and always accountable for the result.\"",
+   "cite": "— Don Walden Adams"
+  },
+  "mission": {
+   "eyebrow": "Mission & Core Values",
+   "title": "Dependable service, delivered with integrity and transparency",
+   "body1": "Proguild exists to keep commercial properties safe, functional, and welcoming. We combine skilled trades, modern coordination, and a genuine sense of responsibility to the people and communities our buildings serve.",
+   "body2": "Whether it's a midnight emergency or a planned preventive program, we show up prepared, communicate clearly, and finish the job right — because the trust of the people we work for is the only foundation worth building on."
+  },
+  "why": {
+   "eyebrow": "Why Choose Us",
+   "title": "A promise you can set your watch by",
+   "items": [
+    {
+     "icon": "badge-check",
+     "title": "Professional service",
+     "text": "Licensed, insured, uniformed crews who respect your property and your tenants."
+    },
+    {
+     "icon": "message-square-text",
+     "title": "Consistent updates",
+     "text": "Clear communication from dispatch to completion — you're never left guessing."
+    },
+    {
+     "icon": "timer",
+     "title": "Acknowledged in 5 minutes",
+     "text": "Every work order is confirmed within five minutes, day or night."
+    },
+    {
+     "icon": "clock",
+     "title": "ETA within 30 minutes",
+     "text": "A reliable arrival window provided within half an hour of your request."
+    }
+   ]
+  },
+  "principles": {
+   "eyebrow": "Company Principles",
+   "title": "What we stand on",
+   "items": [
+    {
+     "icon": "heart-handshake",
+     "title": "Faith",
+     "body": "We lead with conviction and do what's right even when no one is watching."
+    },
+    {
+     "icon": "users",
+     "title": "Customer Focus",
+     "body": "Your priorities set ours. Every decision starts with the people we serve."
+    },
+    {
+     "icon": "combine",
+     "title": "Synergy",
+     "body": "One coordinated team across every trade, working better together than apart."
+    },
+    {
+     "icon": "messages-square",
+     "title": "Effective Communication",
+     "body": "Clear, timely, honest updates at every step — no surprises."
+    },
+    {
+     "icon": "key-round",
+     "title": "Empowerment",
+     "body": "We equip our people to make smart calls and own the outcome."
+    },
+    {
+     "icon": "award",
+     "title": "Excellence",
+     "body": "Good enough never is. We hold every job to a standard we'd accept ourselves."
+    }
+   ]
+  },
+  "process": {
+   "eyebrow": "How It Works",
+   "title": "From request to resolved",
+   "steps": [
+    {
+     "title": "Submit a work order",
+     "body": "Call, email, or send a request — whatever's fastest for you."
+    },
+    {
+     "title": "Acknowledged in 5 min",
+     "body": "We confirm receipt within five minutes, any hour."
+    },
+    {
+     "title": "ETA within 30 min",
+     "body": "You get a dependable on-site arrival window."
+    },
+    {
+     "title": "Completed with updates",
+     "body": "Work done right, with status updates through to sign-off."
+    }
+   ]
+  },
+  "services": {
+   "eyebrow": "Our Services",
+   "title": "Total facility care, under one roof",
+   "filters": [
+    {
+     "label": "All",
+     "cat": "all"
+    },
+    {
+     "label": "Maintenance",
+     "cat": "maintenance"
+    },
+    {
+     "label": "Emergency",
+     "cat": "emergency"
+    },
+    {
+     "label": "Specialty",
+     "cat": "specialty"
+    }
+   ],
+   "items": [
+    {
+     "cat": "emergency",
+     "icon": "wrench",
+     "title": "Plumbing",
+     "desc": "Leaks, fixtures, repipes, and 24/7 emergency response."
+    },
+    {
+     "cat": "emergency",
+     "icon": "zap",
+     "title": "Electrical",
+     "desc": "Repairs, troubleshooting, and code-compliant fixes."
+    },
+    {
+     "cat": "maintenance",
+     "icon": "wind",
+     "title": "HVAC",
+     "desc": "Heating, cooling, and preventive maintenance plans."
+    },
+    {
+     "cat": "specialty",
+     "icon": "key-round",
+     "title": "Locksmith",
+     "desc": "Rekeys, hardware, and secure access control."
+    },
+    {
+     "cat": "maintenance",
+     "icon": "layout-grid",
+     "title": "Flooring",
+     "desc": "Repair, refinish, and full replacement."
+    },
+    {
+     "cat": "specialty",
+     "icon": "construction",
+     "title": "Parking Lot & Asphalt",
+     "desc": "Sealcoating, striping, and pothole repair."
+    },
+    {
+     "cat": "specialty",
+     "icon": "door-open",
+     "title": "Overhead Doors",
+     "desc": "Service, spring replacement, and adjustments."
+    },
+    {
+     "cat": "emergency",
+     "icon": "shield",
+     "title": "Emergency Board-Ups",
+     "desc": "Rapid storefront securing after break-ins or damage."
+    },
+    {
+     "cat": "specialty",
+     "icon": "lightbulb",
+     "title": "Lighting Retrofits",
+     "desc": "Energy-efficient interior and exterior lighting."
+    },
+    {
+     "cat": "specialty",
+     "icon": "paint-roller",
+     "title": "Building Refreshes",
+     "desc": "Paint, finishes, and cosmetic improvements."
+    },
+    {
+     "cat": "maintenance",
+     "icon": "hammer",
+     "title": "General Maintenance",
+     "desc": "Handyman work and ongoing upkeep of all kinds."
+    },
+    {
+     "cat": "maintenance",
+     "icon": "clipboard-check",
+     "title": "Preventive Programs",
+     "desc": "Scheduled inspections that catch issues early."
+    }
+   ]
+  },
+  "coverage": {
+   "eyebrow": "Service Coverage",
+   "title": "Where we show up",
+   "lead": "Hover or tap a state to see its coverage level. Arizona is home — and where we're strongest.",
+   "tiers": [
+    {
+     "id": "strong",
+     "label": "Strong Coverage",
+     "color": "#387E76"
+    },
+    {
+     "id": "average",
+     "label": "Average Coverage",
+     "color": "#92DAD2"
+    },
+    {
+     "id": "none",
+     "label": "No Coverage",
+     "color": "#e6ebea"
+    }
+   ],
+   "states": [
+    {
+     "code": "AZ",
+     "tier": "strong"
+    },
+    {
+     "code": "NV",
+     "tier": "strong"
+    },
+    {
+     "code": "NM",
+     "tier": "strong"
+    },
+    {
+     "code": "CA",
+     "tier": "strong"
+    },
+    {
+     "code": "UT",
+     "tier": "strong"
+    },
+    {
+     "code": "CO",
+     "tier": "average"
+    },
+    {
+     "code": "TX",
+     "tier": "average"
+    },
+    {
+     "code": "OK",
+     "tier": "average"
+    }
+   ]
+  },
+  "teamTeaser": {
+   "eyebrow": "Our Team",
+   "title": "The people behind the promise",
+   "ctaLabel": "Meet the full team"
+  },
+  "cta": {
+   "title": "Become a trusted partner",
+   "sub": "Acknowledged in 5 minutes. ETA within 30. Any building system, any hour.",
+   "phone": "844-777-3331",
+   "buttonLabel": "Request Service"
+  },
+  "contact": {
+   "eyebrow": "Get in Touch",
+   "title": "Tell us what your building needs",
+   "lead": "Send a request and a coordinator will follow up promptly. For active emergencies, call us — someone always answers.",
+   "successTitle": "Request received.",
+   "successText": "Thanks — a coordinator will reach out shortly.",
+   "formAction": "https://formspree.io/f/REPLACE_WITH_FORM_ID"
+  }
+ }
 }
