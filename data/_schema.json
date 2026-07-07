@@ -831,6 +831,10 @@
             {
               "k": "maxw",
               "l": "Max content width"
+            },
+            {
+              "k": "tm-photo",
+              "l": "Team photo size (e.g. 150px)"
             }
           ]
         }

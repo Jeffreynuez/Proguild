@@ -96,9 +96,9 @@
      "text": "Every work order is confirmed within five minutes, day or night."
     },
     {
-     "icon": "clock",
-     "title": "ETA within 30 minutes",
-     "text": "A reliable arrival window provided within half an hour of your request."
+     "icon": "receipt-text",
+     "title": "Transparent invoicing",
+     "text": "Itemized, up-front pricing on every invoice — no hidden fees, no surprises."
     }
    ]
   },
