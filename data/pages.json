@@ -46,6 +46,11 @@
   },
   "stats": [
    {
+    "num": "24",
+    "suffix": "/7",
+    "label": "Emergency response coverage"
+   },
+   {
     "num": "5",
     "suffix": " min",
     "label": "To acknowledge a work order"
@@ -59,11 +64,6 @@
     "num": "15",
     "suffix": "+ yrs",
     "label": "Serving American businesses"
-   },
-   {
-    "num": "24",
-    "suffix": "/7",
-    "label": "Emergency response coverage"
    }
   ],
   "quote": {
