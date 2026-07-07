@@ -11,30 +11,32 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
   if (window.lucide) lucide.createIcons();
 
   /* ---- Year ---- */
-  document.getElementById('year').textContent = new Date().getFullYear();
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ---- Mobile menu ---- */
   const burger = document.getElementById('burger');
   const menu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', function(){
-    const open = menu.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    burger.innerHTML = open ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
-    if (window.lucide) lucide.createIcons();
-  });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    menu.classList.remove('open'); burger.setAttribute('aria-expanded','false');
-    burger.innerHTML = '<i data-lucide="menu"></i>'; if (window.lucide) lucide.createIcons();
-  }));
+  if (burger && menu) {
+    burger.addEventListener('click', function(){
+      const open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.innerHTML = open ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+      if (window.lucide) lucide.createIcons();
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('open'); burger.setAttribute('aria-expanded','false');
+      burger.innerHTML = '<i data-lucide="menu"></i>'; if (window.lucide) lucide.createIcons();
+    }));
+  }
 
   /* ---- Header condense + floating CTA ---- */
   const header = document.getElementById('siteHeader');
   const hero = document.getElementById('hero');
   const floatCta = document.getElementById('floatCta');
   function onScroll(){
-    const past = window.scrollY > (hero.offsetHeight - 120);
-    header.classList.toggle('condensed', window.scrollY > 40);
-    floatCta.classList.toggle('show', past);
+    if (header) header.classList.toggle('condensed', window.scrollY > 40);
+    if (hero && floatCta) floatCta.classList.toggle('show', window.scrollY > (hero.offsetHeight - 120));
   }
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
@@ -42,7 +44,7 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
   /* ---- Hero parallax + floating shapes ---- */
   const heroBg = document.getElementById('heroBg');
   const shapes = Array.from(document.querySelectorAll('.hero .shape'));
-  if (!reduceMotion){
+  if (heroBg && !reduceMotion){
     let ticking = false;
     window.addEventListener('scroll', function(){
       if (ticking) return; ticking = true;
@@ -68,7 +70,6 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
     const ro = new IntersectionObserver(function(entries){
       entries.forEach(function(en, i){
         if (en.isIntersecting){
-          // stagger siblings within the same grid
           const sibs = Array.from(en.target.parentNode.children).filter(c => c.classList.contains('reveal'));
           const idx = sibs.indexOf(en.target);
           en.target.style.transitionDelay = (idx >= 0 ? Math.min(idx,6) * 70 : 0) + 'ms';
@@ -99,16 +100,16 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
       requestAnimationFrame(tick);
     });
   }
-  new IntersectionObserver(function(e){ if (e[0].isIntersecting) runCount(); }, { threshold:0.4 }).observe(statBand);
+  if (statBand) new IntersectionObserver(function(e){ if (e[0].isIntersecting) runCount(); }, { threshold:0.4 }).observe(statBand);
 
   /* ---- Process timeline draw ---- */
   const process = document.getElementById('process');
-  new IntersectionObserver(function(e){ if (e[0].isIntersecting){ process.classList.add('drawn'); } }, { threshold:0.3 }).observe(process);
+  if (process) new IntersectionObserver(function(e){ if (e[0].isIntersecting){ process.classList.add('drawn'); } }, { threshold:0.3 }).observe(process);
 
   /* ---- Services filter ---- */
   const filter = document.getElementById('svcFilter');
   const services = Array.from(document.querySelectorAll('#svcGrid .service'));
-  filter.addEventListener('click', function(e){
+  if (filter) filter.addEventListener('click', function(e){
     const chip = e.target.closest('.chip'); if (!chip) return;
     filter.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
     chip.classList.add('active');
@@ -120,8 +121,6 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
   });
 
   /* ---- Coverage map ---- */
-  // Resolve CSS custom properties (e.g. "var(--accent)") to concrete hex so
-  // SVG fill applies reliably across renderers.
   const rootStyle = getComputedStyle(document.documentElement);
   function resolveColor(c){
     if (typeof c === 'string' && c.indexOf('var(') === 0){
@@ -149,11 +148,12 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
     el.setAttribute('aria-label', label);
 
     function showTip(x, y){
+      if (!tip) return;
       const t = tierMap[tierId] || tierMap.none;
       tip.innerHTML = '<span class="t-name">'+(stateNames[code]||code)+'</span><br><span class="t-tier"><span class="swatch" style="background:'+(t?t.color:noneColor)+'"></span>'+(t?t.label:'No Coverage')+'</span>';
       tip.style.left = x + 'px'; tip.style.top = y + 'px'; tip.classList.add('show');
     }
-    function hideTip(){ tip.classList.remove('show'); }
+    function hideTip(){ if (tip) tip.classList.remove('show'); }
 
     el.addEventListener('mousemove', e => showTip(e.clientX, e.clientY));
     el.addEventListener('mouseleave', hideTip);
@@ -162,7 +162,6 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
       showTip(r.left + r.width/2, r.top + r.height/2);
     });
     el.addEventListener('blur', hideTip);
-    // touch
     el.addEventListener('touchstart', function(e){
       const t = e.touches[0]; if (t) showTip(t.clientX, t.clientY);
     }, { passive:true });
@@ -170,29 +169,24 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
 
   /* ---- Legend (generated from tiers) ---- */
   const legend = document.getElementById('legend');
-  legend.innerHTML = COVERAGE.tiers.map(function(t){
+  if (legend) legend.innerHTML = COVERAGE.tiers.map(function(t){
     return '<span class="item"><span class="swatch" style="background:'+t.color+'"></span>'+t.label+'</span>';
   }).join('');
 
   /* ---- Contact form (fake submit) ---- */
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
-  form.addEventListener('submit', function(e){
+  if (form) form.addEventListener('submit', function(e){
     e.preventDefault();
     if (!form.checkValidity()){ form.reportValidity(); return; }
     form.style.display = 'none';
-    success.style.display = 'block';
-    success.scrollIntoView ? null : null; // no scrollIntoView per guidance
+    if (success) success.style.display = 'block';
   });
 })();
-
-/* ---- next script ---- */
 
 /* --uh from utility height (so only the navbar pins) */
 (function(){var u=document.querySelector('.utility');function s(){if(u)document.documentElement.style.setProperty('--uh',u.offsetHeight+'px');}s();window.addEventListener('resize',s);window.addEventListener('load',s);})();
 (function(){var b=document.querySelector('.mobile-bar');if(!b)return;function c(){b.classList.toggle('solid',(window.innerHeight+window.scrollY)>=document.documentElement.scrollHeight-2);}window.addEventListener('scroll',c,{passive:true});window.addEventListener('resize',c);window.addEventListener('load',c);c();})();
-
-/* ---- next script ---- */
 
 /* ambient shape parallax v2 (size + multi-direction) */
 (function(){
@@ -244,7 +238,6 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
     var d=e.data||{};
     if(d.jrd==='apply'&&d.edit){ document.querySelectorAll('[data-edit="'+d.edit+'"]').forEach(function(el){ if(el!==selEl||!el.isContentEditable) el.textContent=d.value; }); }
     if(d.jrd==='styleapply'&&d.edit){ document.querySelectorAll('[data-edit="'+d.edit+'"]').forEach(function(el){ if(d.color) el.style.setProperty('color',d.color,'important'); else el.style.removeProperty('color'); if(d.align) el.style.setProperty('text-align',d.align,'important'); else el.style.removeProperty('text-align'); }); }
-    // Proguild themes via CSS variables (theme.json -> theme.css on rebuild); live theme msgs ignored.
   });
   parent.postMessage({jrd:'ready', page:location.pathname}, '*');
 })();

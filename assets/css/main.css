@@ -380,3 +380,8 @@ body{overflow-x:hidden}
 .pg-hex{clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
 .pg-para{clip-path:polygon(28% 0,100% 0,72% 100%,0 100%)}
 
+
+/* ===== team grid: center any number of members ===== */
+.team-grid{display:flex;flex-wrap:wrap;justify-content:center}
+.team-grid .person{flex:0 1 200px}
+@media(max-width:560px){.team-grid .person{flex-basis:44%}}
