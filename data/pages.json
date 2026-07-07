@@ -259,7 +259,7 @@
   "coverage": {
    "eyebrow": "Service Coverage",
    "title": "Where we show up",
-   "lead": "Hover or tap a state to see its coverage level. Arizona is home — and where we're strongest.",
+   "lead": "Hover or tap a state to see its coverage level.",
    "tiers": [
     {
      "id": "strong",
