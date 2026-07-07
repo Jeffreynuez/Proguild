@@ -550,6 +550,22 @@
               "l": "Button label"
             }
           ]
+        },
+        {
+          "bt": "Team members (also on Our Team page)",
+          "kind": "arr",
+          "file": "team.json",
+          "path": "members",
+          "titleField": "name",
+          "subField": "role",
+          "thumbField": "photo",
+          "fields": [
+            { "k": "name", "l": "Name" },
+            { "k": "role", "l": "Role" },
+            { "k": "photo", "l": "Photo", "type": "media" },
+            { "k": "bio", "l": "Bio", "type": "area" },
+            { "k": "slug", "l": "URL id (anchor)" }
+          ]
         }
       ]
     },

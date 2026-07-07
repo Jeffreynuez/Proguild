@@ -220,11 +220,14 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
   st.textContent = '[data-edit],[data-edit-item]{cursor:pointer}' +
     '[data-edit]:hover{outline:2px dashed #4a9eff;outline-offset:2px}' +
     '[data-edit-item]:hover{outline:2px dashed #7ab8ff;outline-offset:3px}' +
-    '.jrd-ed-sel{outline:2px solid #4a9eff!important;outline-offset:2px}';
+    '.jrd-ed-sel{outline:2px solid #4a9eff!important;outline-offset:2px}' +
+    '#usMap .state{cursor:pointer}#usMap .state:hover{stroke:#4a9eff;stroke-width:2.5}';
   document.head.appendChild(st);
   var selEl = null;
   function select(el){ if(selEl){ selEl.classList.remove('jrd-ed-sel'); if(selEl.isContentEditable) selEl.contentEditable='false'; } selEl=el; if(!el) return; el.classList.add('jrd-ed-sel'); }
   document.addEventListener('click', function(e){
+    var mapSt=e.target.closest('#usMap .state');
+    if(mapSt){ e.preventDefault(); e.stopPropagation(); select(null); parent.postMessage({jrd:'mapstate', code:mapSt.getAttribute('data-state')},'*'); return; }
     var leaf=e.target.closest('[data-edit]'), item=e.target.closest('[data-edit-item]');
     if(!leaf&&!item){ select(null); parent.postMessage({jrd:'deselect'},'*'); return; }
     e.preventDefault(); e.stopPropagation();
@@ -238,6 +241,7 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
     var d=e.data||{};
     if(d.jrd==='apply'&&d.edit){ document.querySelectorAll('[data-edit="'+d.edit+'"]').forEach(function(el){ if(el!==selEl||!el.isContentEditable) el.textContent=d.value; }); }
     if(d.jrd==='styleapply'&&d.edit){ document.querySelectorAll('[data-edit="'+d.edit+'"]').forEach(function(el){ if(d.color) el.style.setProperty('color',d.color,'important'); else el.style.removeProperty('color'); if(d.align) el.style.setProperty('text-align',d.align,'important'); else el.style.removeProperty('text-align'); }); }
+    if(d.jrd==='mapstate-apply'&&d.code){ var mel=document.querySelector('#usMap .state[data-state="'+d.code+'"]'); if(mel) mel.style.fill=d.color; }
   });
   parent.postMessage({jrd:'ready', page:location.pathname}, '*');
 })();
