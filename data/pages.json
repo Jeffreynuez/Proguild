@@ -501,7 +501,9 @@
    "lead": "Send a request and a coordinator will follow up promptly. For active emergencies, call us — someone always answers.",
    "successTitle": "Request received.",
    "successText": "Thanks — a coordinator will reach out shortly.",
-   "formAction": "https://formspree.io/f/REPLACE_WITH_FORM_ID"
+   "formAction": "https://api.web3forms.com/submit",
+   "accessKey": "REPLACE_WITH_WEB3FORMS_ACCESS_KEY",
+   "subject": "New inquiry from the Proguild website"
   }
  }
 }

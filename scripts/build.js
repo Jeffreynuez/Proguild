@@ -319,6 +319,10 @@ ${team.members.map((m,i)=>`      <a class="person reveal" href="our-team.html#${
       <div class="form-card reveal">
         <div class="form-success" id="formSuccess"><strong${ed('home.contact.successTitle')}>${esc(H.contact.successTitle)}</strong> <span${ed('home.contact.successText')}>${esc(H.contact.successText)}</span></div>
         <form id="contactForm" action="${esc(H.contact.formAction)}" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="${esc(H.contact.accessKey||'')}">
+          <input type="hidden" name="subject" value="${esc(H.contact.subject||'New inquiry from the Proguild website')}">
+          <input type="hidden" name="from_name" value="Proguild Website">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
           <div class="field two">
             <div class="field" style="margin:0"><label for="fn">First name</label><input id="fn" name="firstName" type="text" required autocomplete="given-name"></div>
             <div class="field" style="margin:0"><label for="ln">Last name</label><input id="ln" name="lastName" type="text" required autocomplete="family-name"></div>

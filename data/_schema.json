@@ -634,7 +634,15 @@
             },
             {
               "k": "formAction",
-              "l": "Formspree endpoint URL"
+              "l": "Form endpoint URL (Web3Forms)"
+            },
+            {
+              "k": "accessKey",
+              "l": "Web3Forms access key"
+            },
+            {
+              "k": "subject",
+              "l": "Email subject line"
             }
           ]
         }

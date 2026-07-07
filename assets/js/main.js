@@ -173,14 +173,30 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
     return '<span class="item"><span class="swatch" style="background:'+t.color+'"></span>'+t.label+'</span>';
   }).join('');
 
-  /* ---- Contact form (fake submit) ---- */
+  /* ---- Contact form (Web3Forms AJAX submit) ---- */
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
   if (form) form.addEventListener('submit', function(e){
     e.preventDefault();
     if (!form.checkValidity()){ form.reportValidity(); return; }
-    form.style.display = 'none';
-    if (success) success.style.display = 'block';
+    var btn = form.querySelector('button[type="submit"]');
+    var orig = btn ? btn.innerHTML : '';
+    if (btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+    fetch(form.action, { method:'POST', headers:{ 'Accept':'application/json' }, body:new FormData(form) })
+      .then(function(r){ return r.json().then(function(j){ return { ok:r.ok, j:j }; }); })
+      .then(function(res){
+        if (res.ok && res.j && res.j.success){
+          form.style.display = 'none';
+          if (success) success.style.display = 'block';
+        } else {
+          if (btn){ btn.disabled = false; btn.innerHTML = orig; }
+          alert((res.j && res.j.message) || 'Something went wrong. Please call us or email us directly.');
+        }
+      })
+      .catch(function(){
+        if (btn){ btn.disabled = false; btn.innerHTML = orig; }
+        alert('Network error — please call us or email us directly.');
+      });
   });
 })();
 
