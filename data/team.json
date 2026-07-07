@@ -1,0 +1,44 @@
+{
+  "page": {
+    "eyebrow": "Who We Are",
+    "title": "Our Team",
+    "intro": "The people behind ProGuild — committed to client success, clear communication, and quality in every interaction."
+  },
+  "members": [
+    {
+      "slug": "dannell-peterson",
+      "photo": "https://res.cloudinary.com/dlgc3fj6w/image/upload/f_auto,q_auto/proguild/team/dannell",
+      "name": "Dannell Peterson",
+      "role": "Owner",
+      "bio": "Dannell Peterson brings over 15 years of experience in the restoration industry. She has developed a deep understanding of the field and cultivated strong, strategic relationships with key partners and service providers. Under her leadership, ProGuild has grown and thrived — driven by unwavering commitment, strategic vision, and a focus on collaboration and organizational unity."
+    },
+    {
+      "slug": "brionna-peterson",
+      "photo": "https://res.cloudinary.com/dlgc3fj6w/image/upload/f_auto,q_auto/proguild/team/brionna",
+      "name": "Brionna Peterson",
+      "role": "Client Success",
+      "bio": "Brionna has been with ProGuild since 2022, playing a key role in helping the company grow from the beginning. She works closely with clients and team members to keep projects on track and every detail handled with care. Known for her friendly leadership style and strong problem-solving, she makes sure every client and provider feels supported and confident."
+    },
+    {
+      "slug": "analisa-peterson",
+      "photo": "https://res.cloudinary.com/dlgc3fj6w/image/upload/f_auto,q_auto/proguild/team/analisa",
+      "name": "Analisa Peterson",
+      "role": "Client Success",
+      "bio": "Analisa lives by the mindset of taking life one step at a time and is a proud mama who values quality time with family. Since joining ProGuild she has been committed to client success and building strong, lasting relationships, believing that strong client and vendor partnerships are the key to a successful business."
+    },
+    {
+      "slug": "lorie-clapano",
+      "photo": "https://res.cloudinary.com/dlgc3fj6w/image/upload/f_auto,q_auto/proguild/team/lorie",
+      "name": "Lorie Clapano",
+      "role": "Development Team Lead",
+      "bio": "As the go-to contact for service requests, Lorie is committed to delivering a smooth, stress-free experience for every client — ensuring clear communication, timely updates, and attention to detail from start to finish. She believes strong partnerships are built on consistency, transparency, and quality."
+    },
+    {
+      "slug": "edward-waldrop",
+      "photo": "https://res.cloudinary.com/dlgc3fj6w/image/upload/f_auto,q_auto/proguild/team/edward",
+      "name": "Edward Waldrop",
+      "role": "Chief Financial Officer",
+      "bio": "Ed is a military veteran with extensive experience in small business operations and inventory accounting. His disciplined background and hands-on approach make him reliable and detail-oriented in every role, bringing a strong work ethic and commitment to excellence developed through years of service and business experience."
+    }
+  ]
+}

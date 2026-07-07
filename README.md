@@ -1,21 +1,15 @@
-# Proguild Facility Management — website
+# Proguild Facility Management — website (CMS-managed)
 
-Static marketing site for Proguild Facility Management (proguildfm.com).
-Three self-contained pages, no build step and no dependencies:
+Static site rendered from `data/*.json` by `scripts/build.js`, editable through the
+shared JRD CMS at https://jrd-online-portfolio.vercel.app/admin.
 
-- `index.html` — home (hero, services, interactive coverage map, team, contact)
-- `our-team.html` — team
-- `privacy-policy.html` — privacy policy
+- `data/pages.json` `team.json` `privacy.json` — content
+- `data/theme.json` — design tokens → compiled to `assets/css/theme.css`
+- `data/_schema.json` — describes editable sections/fields for the CMS
+- `scripts/build.js` — renders data → `index.html`, `our-team.html`, `privacy-policy.html`; stamps `data-edit` for the visual editor
+- `scripts/map.svg` — the coverage-map SVG (states colored at runtime from the editable COVERAGE config)
+- `assets/js/main.js` — behaviors + the `?edit=1` visual-editor bridge
 
-CSS, JavaScript, and the coverage-map SVG are inlined in each file. Images are
-delivered through Cloudinary (cloud `dlgc3fj6w`); icons via the Lucide CDN.
-
-## Deploy
-Hosted on Vercel from this repo. `vercel.json` enables clean URLs
-(`/our-team`, `/privacy-policy`). No build command — files are served as-is.
-
-Built from a Claude Design system. A CMS-editable version (data JSON + a
-`build.js` renderer, editable through the shared admin at
-`jrd-online-portfolio.vercel.app/admin`) is the planned next phase.
+Build: `npm run build`. Deploy: Vercel builds on push (`vercel.json`). Images: Cloudinary `dlgc3fj6w` (folder `proguild/`).
 
 Built by Jeffrey De La Nuez with Claude.

@@ -1,0 +1,824 @@
+{
+  "cloudName": "dlgc3fj6w",
+  "pages": [
+    [
+      "index.html",
+      "Home"
+    ],
+    [
+      "our-team.html",
+      "Our Team"
+    ],
+    [
+      "privacy-policy.html",
+      "Privacy Policy"
+    ]
+  ],
+  "sections": [
+    {
+      "id": "global",
+      "label": "Global (header, nav, footer)",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "SEO",
+          "kind": "obj",
+          "path": "global",
+          "fields": [
+            {
+              "k": "seoTitle",
+              "l": "SEO title"
+            },
+            {
+              "k": "seoDesc",
+              "l": "SEO description",
+              "type": "area"
+            }
+          ]
+        },
+        {
+          "bt": "Contact info",
+          "kind": "obj",
+          "path": "global.contact",
+          "fields": [
+            {
+              "k": "address",
+              "l": "Address (one line)"
+            },
+            {
+              "k": "addressLine1",
+              "l": "Address line 1 (footer)"
+            },
+            {
+              "k": "addressLine2",
+              "l": "Address line 2 (footer)"
+            },
+            {
+              "k": "phone",
+              "l": "Phone (display)"
+            },
+            {
+              "k": "phoneHref",
+              "l": "Phone (digits)"
+            },
+            {
+              "k": "email",
+              "l": "Email"
+            },
+            {
+              "k": "mapUrl",
+              "l": "Map link"
+            }
+          ]
+        },
+        {
+          "bt": "Nav links",
+          "kind": "arr",
+          "path": "global.nav",
+          "titleField": "label",
+          "subField": "href",
+          "fields": [
+            {
+              "k": "label",
+              "l": "Label"
+            },
+            {
+              "k": "href",
+              "l": "Link"
+            }
+          ]
+        },
+        {
+          "bt": "Header button",
+          "kind": "obj",
+          "path": "global",
+          "fields": [
+            {
+              "k": "ctaLabel",
+              "l": "Button label"
+            }
+          ]
+        },
+        {
+          "bt": "Footer",
+          "kind": "obj",
+          "path": "global.footer",
+          "fields": [
+            {
+              "k": "blurb",
+              "l": "Footer blurb",
+              "type": "area"
+            },
+            {
+              "k": "linkedin",
+              "l": "LinkedIn URL"
+            },
+            {
+              "k": "copyright",
+              "l": "Copyright line"
+            },
+            {
+              "k": "location",
+              "l": "Location"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-hero",
+      "label": "Home · Hero",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Hero",
+          "kind": "obj",
+          "path": "home.hero",
+          "fields": [
+            {
+              "k": "eyebrow",
+              "l": "Eyebrow"
+            },
+            {
+              "k": "title",
+              "l": "Title",
+              "type": "area"
+            },
+            {
+              "k": "body",
+              "l": "Body",
+              "type": "area"
+            },
+            {
+              "k": "cta1",
+              "l": "Button 1 label"
+            },
+            {
+              "k": "cta1Href",
+              "l": "Button 1 link"
+            },
+            {
+              "k": "cta2",
+              "l": "Button 2 label"
+            },
+            {
+              "k": "cta2Href",
+              "l": "Button 2 link"
+            },
+            {
+              "k": "bg",
+              "l": "Background image",
+              "type": "media"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-stats",
+      "label": "Home · Stat band",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Stats",
+          "kind": "arr",
+          "path": "home.stats",
+          "titleField": "label",
+          "fields": [
+            {
+              "k": "num",
+              "l": "Number"
+            },
+            {
+              "k": "suffix",
+              "l": "Suffix (e.g. ' min')"
+            },
+            {
+              "k": "label",
+              "l": "Label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-quote",
+      "label": "Home · Quote",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Quote",
+          "kind": "obj",
+          "path": "home.quote",
+          "fields": [
+            {
+              "k": "text",
+              "l": "Quote",
+              "type": "area"
+            },
+            {
+              "k": "cite",
+              "l": "Attribution"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-mission",
+      "label": "Home · Mission",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Mission",
+          "kind": "obj",
+          "path": "home.mission",
+          "fields": [
+            {
+              "k": "eyebrow",
+              "l": "Eyebrow"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "body1",
+              "l": "Paragraph 1",
+              "type": "area"
+            },
+            {
+              "k": "body2",
+              "l": "Paragraph 2",
+              "type": "area"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-why",
+      "label": "Home · Why Choose Us",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Heading",
+          "kind": "obj",
+          "path": "home.why",
+          "fields": [
+            {
+              "k": "eyebrow",
+              "l": "Eyebrow"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            }
+          ]
+        },
+        {
+          "bt": "Guarantees",
+          "kind": "arr",
+          "path": "home.why.items",
+          "titleField": "title",
+          "subField": "text",
+          "fields": [
+            {
+              "k": "icon",
+              "l": "Icon (Lucide name)"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "text",
+              "l": "Text",
+              "type": "area"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-principles",
+      "label": "Home · Principles",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Heading",
+          "kind": "obj",
+          "path": "home.principles",
+          "fields": [
+            {
+              "k": "eyebrow",
+              "l": "Eyebrow"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            }
+          ]
+        },
+        {
+          "bt": "Principles",
+          "kind": "arr",
+          "path": "home.principles.items",
+          "titleField": "title",
+          "subField": "body",
+          "fields": [
+            {
+              "k": "icon",
+              "l": "Icon (Lucide name)"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "body",
+              "l": "Body",
+              "type": "area"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-process",
+      "label": "Home · How It Works",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Heading",
+          "kind": "obj",
+          "path": "home.process",
+          "fields": [
+            {
+              "k": "eyebrow",
+              "l": "Eyebrow"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            }
+          ]
+        },
+        {
+          "bt": "Steps",
+          "kind": "arr",
+          "path": "home.process.steps",
+          "titleField": "title",
+          "subField": "body",
+          "fields": [
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "body",
+              "l": "Body",
+              "type": "area"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-services",
+      "label": "Home · Services",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Heading",
+          "kind": "obj",
+          "path": "home.services",
+          "fields": [
+            {
+              "k": "eyebrow",
+              "l": "Eyebrow"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            }
+          ]
+        },
+        {
+          "bt": "Filters",
+          "kind": "arr",
+          "path": "home.services.filters",
+          "titleField": "label",
+          "subField": "cat",
+          "fields": [
+            {
+              "k": "label",
+              "l": "Label"
+            },
+            {
+              "k": "cat",
+              "l": "Category key"
+            }
+          ]
+        },
+        {
+          "bt": "Services",
+          "kind": "arr",
+          "path": "home.services.items",
+          "titleField": "title",
+          "subField": "desc",
+          "fields": [
+            {
+              "k": "icon",
+              "l": "Icon (Lucide name)"
+            },
+            {
+              "k": "cat",
+              "l": "Category",
+              "type": "select",
+              "opts": [
+                "maintenance",
+                "emergency",
+                "specialty"
+              ]
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "desc",
+              "l": "Description",
+              "type": "area"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-coverage",
+      "label": "Home · Coverage Map",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Heading",
+          "kind": "obj",
+          "path": "home.coverage",
+          "fields": [
+            {
+              "k": "eyebrow",
+              "l": "Eyebrow"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "lead",
+              "l": "Intro line",
+              "type": "area"
+            }
+          ]
+        },
+        {
+          "bt": "Coverage tiers (colors)",
+          "kind": "arr",
+          "path": "home.coverage.tiers",
+          "titleField": "label",
+          "subField": "id",
+          "fields": [
+            {
+              "k": "id",
+              "l": "Tier id (strong/average/none)"
+            },
+            {
+              "k": "label",
+              "l": "Legend label"
+            },
+            {
+              "k": "color",
+              "l": "Color",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "bt": "State coverage",
+          "kind": "arr",
+          "path": "home.coverage.states",
+          "titleField": "code",
+          "subField": "tier",
+          "fields": [
+            {
+              "k": "code",
+              "l": "State (2-letter code)"
+            },
+            {
+              "k": "tier",
+              "l": "Coverage tier",
+              "type": "select",
+              "opts": [
+                "strong",
+                "average",
+                "none"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-teamteaser",
+      "label": "Home · Team Teaser",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Team teaser",
+          "kind": "obj",
+          "path": "home.teamTeaser",
+          "fields": [
+            {
+              "k": "eyebrow",
+              "l": "Eyebrow"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "ctaLabel",
+              "l": "Button label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-cta",
+      "label": "Home · CTA band",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "CTA",
+          "kind": "obj",
+          "path": "home.cta",
+          "fields": [
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "sub",
+              "l": "Subtext",
+              "type": "area"
+            },
+            {
+              "k": "phone",
+              "l": "Phone (display)"
+            },
+            {
+              "k": "buttonLabel",
+              "l": "Button label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-contact",
+      "label": "Home · Contact",
+      "file": "pages.json",
+      "blocks": [
+        {
+          "bt": "Contact",
+          "kind": "obj",
+          "path": "home.contact",
+          "fields": [
+            {
+              "k": "eyebrow",
+              "l": "Eyebrow"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "lead",
+              "l": "Intro",
+              "type": "area"
+            },
+            {
+              "k": "successTitle",
+              "l": "Success title"
+            },
+            {
+              "k": "successText",
+              "l": "Success text",
+              "type": "area"
+            },
+            {
+              "k": "formAction",
+              "l": "Formspree endpoint URL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "label": "Our Team page",
+      "file": "team.json",
+      "blocks": [
+        {
+          "bt": "Page header",
+          "kind": "obj",
+          "path": "page",
+          "fields": [
+            {
+              "k": "eyebrow",
+              "l": "Eyebrow"
+            },
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "intro",
+              "l": "Intro",
+              "type": "area"
+            }
+          ]
+        },
+        {
+          "bt": "Team members",
+          "kind": "arr",
+          "path": "members",
+          "titleField": "name",
+          "subField": "role",
+          "thumbField": "photo",
+          "fields": [
+            {
+              "k": "name",
+              "l": "Name"
+            },
+            {
+              "k": "role",
+              "l": "Role"
+            },
+            {
+              "k": "photo",
+              "l": "Photo",
+              "type": "media"
+            },
+            {
+              "k": "bio",
+              "l": "Bio",
+              "type": "area"
+            },
+            {
+              "k": "slug",
+              "l": "URL id (anchor)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "label": "Privacy Policy page",
+      "file": "privacy.json",
+      "blocks": [
+        {
+          "bt": "Page",
+          "kind": "obj",
+          "path": "page",
+          "fields": [
+            {
+              "k": "title",
+              "l": "Title"
+            },
+            {
+              "k": "sub",
+              "l": "Subtitle",
+              "type": "area"
+            },
+            {
+              "k": "intro",
+              "l": "Intro",
+              "type": "area"
+            }
+          ]
+        },
+        {
+          "bt": "Sections",
+          "kind": "arr",
+          "path": "page.sections",
+          "titleField": "heading",
+          "subField": "body",
+          "fields": [
+            {
+              "k": "heading",
+              "l": "Heading"
+            },
+            {
+              "k": "body",
+              "l": "Body",
+              "type": "area"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theme",
+      "label": "Theme · Design",
+      "file": "theme.json",
+      "blocks": [
+        {
+          "bt": "Brand colors",
+          "kind": "obj",
+          "path": "",
+          "fields": [
+            {
+              "k": "accent",
+              "l": "Accent (green)",
+              "type": "color"
+            },
+            {
+              "k": "accent-light",
+              "l": "Accent light (mint)",
+              "type": "color"
+            },
+            {
+              "k": "accent-dark",
+              "l": "Accent dark",
+              "type": "color"
+            },
+            {
+              "k": "dark",
+              "l": "Dark sections",
+              "type": "color"
+            },
+            {
+              "k": "ink",
+              "l": "Body text",
+              "type": "color"
+            },
+            {
+              "k": "muted",
+              "l": "Muted text",
+              "type": "color"
+            },
+            {
+              "k": "bg",
+              "l": "Background",
+              "type": "color"
+            },
+            {
+              "k": "line",
+              "l": "Borders",
+              "type": "color"
+            },
+            {
+              "k": "mint-wash",
+              "l": "Mint wash (section tint)",
+              "type": "color"
+            },
+            {
+              "k": "alert",
+              "l": "Alert / no-coverage",
+              "type": "color"
+            }
+          ]
+        },
+        {
+          "bt": "Type & layout",
+          "kind": "obj",
+          "path": "",
+          "fields": [
+            {
+              "k": "font-heading",
+              "l": "Heading font stack"
+            },
+            {
+              "k": "font-body",
+              "l": "Body font stack"
+            },
+            {
+              "k": "radius",
+              "l": "Corner radius"
+            },
+            {
+              "k": "radius-lg",
+              "l": "Large radius"
+            },
+            {
+              "k": "maxw",
+              "l": "Max content width"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

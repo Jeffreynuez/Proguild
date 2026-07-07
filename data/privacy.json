@@ -1,0 +1,33 @@
+{
+  "page": {
+    "title": "Privacy Policy",
+    "intro": "At Proguild Facility Management, accessible from proguildfm.com, the privacy of our visitors is a priority. This document explains the types of information we collect and how we use it.",
+    "sections": [
+      {
+        "heading": "Consent",
+        "body": "By using our website, you hereby consent to our Privacy Policy and agree to its terms. This policy applies only to our online activities and is valid for visitors to proguildfm.com with regard to the information they share and/or that is collected here."
+      },
+      {
+        "heading": "Information we collect",
+        "body": "If you contact us directly, we may receive your name, email address, phone number, the contents of your message, and any other information you choose to provide. The reasons for collecting it are made clear at the point we ask."
+      },
+      {
+        "heading": "How we use your information",
+        "body": "We use the information we collect to provide and maintain our website, improve and personalize it, communicate with you, send updates, and prevent fraud."
+      },
+      {
+        "heading": "Log files & cookies",
+        "body": "Like most websites, ProGuild uses standard log files and cookies to understand visitor preferences and optimize the experience. This data is not linked to personally identifiable information."
+      },
+      {
+        "heading": "Children's information",
+        "body": "ProGuild does not knowingly collect personal information from children under 13. If you believe your child provided such information, please contact us and we will promptly remove it."
+      },
+      {
+        "heading": "Contact us",
+        "body": "Questions about this policy? Contact us at dannell@proguildfm.com or 844-777-3331."
+      }
+    ],
+    "sub": "How Proguild Facility Management collects, uses, and protects your information."
+  }
+}
