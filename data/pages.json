@@ -300,15 +300,187 @@
     },
     {
      "code": "CO",
-     "tier": "average"
+     "tier": "strong"
     },
     {
      "code": "TX",
-     "tier": "average"
+     "tier": "strong"
     },
     {
      "code": "OK",
-     "tier": "average"
+     "tier": "strong"
+    },
+    {
+     "code": "AR",
+     "tier": "strong"
+    },
+    {
+     "code": "LA",
+     "tier": "strong"
+    },
+    {
+     "code": "AK",
+     "tier": "strong"
+    },
+    {
+     "code": "HI",
+     "tier": "strong"
+    },
+    {
+     "code": "MS",
+     "tier": "strong"
+    },
+    {
+     "code": "AL",
+     "tier": "strong"
+    },
+    {
+     "code": "GA",
+     "tier": "strong"
+    },
+    {
+     "code": "FL",
+     "tier": "strong"
+    },
+    {
+     "code": "SC",
+     "tier": "strong"
+    },
+    {
+     "code": "NC",
+     "tier": "strong"
+    },
+    {
+     "code": "TN",
+     "tier": "strong"
+    },
+    {
+     "code": "VA",
+     "tier": "strong"
+    },
+    {
+     "code": "DC",
+     "tier": "strong"
+    },
+    {
+     "code": "MD",
+     "tier": "strong"
+    },
+    {
+     "code": "NJ",
+     "tier": "strong"
+    },
+    {
+     "code": "PA",
+     "tier": "strong"
+    },
+    {
+     "code": "DE",
+     "tier": "strong"
+    },
+    {
+     "code": "WV",
+     "tier": "strong"
+    },
+    {
+     "code": "NY",
+     "tier": "strong"
+    },
+    {
+     "code": "CT",
+     "tier": "strong"
+    },
+    {
+     "code": "VT",
+     "tier": "strong"
+    },
+    {
+     "code": "MA",
+     "tier": "strong"
+    },
+    {
+     "code": "RI",
+     "tier": "strong"
+    },
+    {
+     "code": "NH",
+     "tier": "strong"
+    },
+    {
+     "code": "ME",
+     "tier": "strong"
+    },
+    {
+     "code": "OH",
+     "tier": "strong"
+    },
+    {
+     "code": "MI",
+     "tier": "strong"
+    },
+    {
+     "code": "IN",
+     "tier": "strong"
+    },
+    {
+     "code": "KY",
+     "tier": "strong"
+    },
+    {
+     "code": "IL",
+     "tier": "strong"
+    },
+    {
+     "code": "MO",
+     "tier": "strong"
+    },
+    {
+     "code": "IA",
+     "tier": "strong"
+    },
+    {
+     "code": "WI",
+     "tier": "strong"
+    },
+    {
+     "code": "MN",
+     "tier": "strong"
+    },
+    {
+     "code": "KS",
+     "tier": "strong"
+    },
+    {
+     "code": "NE",
+     "tier": "strong"
+    },
+    {
+     "code": "SD",
+     "tier": "strong"
+    },
+    {
+     "code": "ND",
+     "tier": "strong"
+    },
+    {
+     "code": "WY",
+     "tier": "strong"
+    },
+    {
+     "code": "MT",
+     "tier": "strong"
+    },
+    {
+     "code": "ID",
+     "tier": "strong"
+    },
+    {
+     "code": "OR",
+     "tier": "strong"
+    },
+    {
+     "code": "WA",
+     "tier": "strong"
     }
    ]
   },
