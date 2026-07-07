@@ -320,11 +320,11 @@
     },
     {
      "code": "AK",
-     "tier": "strong"
+     "tier": "average"
     },
     {
      "code": "HI",
-     "tier": "strong"
+     "tier": "average"
     },
     {
      "code": "MS",
@@ -456,11 +456,11 @@
     },
     {
      "code": "SD",
-     "tier": "strong"
+     "tier": "average"
     },
     {
      "code": "ND",
-     "tier": "strong"
+     "tier": "average"
     },
     {
      "code": "WY",
@@ -472,7 +472,7 @@
     },
     {
      "code": "ID",
-     "tier": "strong"
+     "tier": "average"
     },
     {
      "code": "OR",
