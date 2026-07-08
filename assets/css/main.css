@@ -401,3 +401,15 @@ body{overflow-x:hidden}
 .prose h2{font-size:1.4rem;margin:30px 0 8px}
 .prose p{color:var(--muted)}
 @media(max-width:620px){.tm-card{grid-template-columns:1fr;justify-items:center;text-align:center}.tm-card .ph{margin:0 auto}}
+
+/* ===== mobile overflow fix =====
+   Ambient parallax shapes carry transform + will-change, so on some mobile
+   browsers they get composited to their own layer and escape the
+   .sec-shapes overflow:hidden clip — bleeding past the viewport and cutting
+   off the contact address + form on the right. Desktop Chrome clips them
+   correctly (emulator looked fine). Hide the decorative shapes on phones and
+   add a root-level horizontal clip guard (overflow-x:clip is sticky-safe). */
+html{overflow-x:clip}
+@media(max-width:640px){
+  .pg-shape,.hero .shape{display:none}
+}
