@@ -413,3 +413,14 @@ html{overflow-x:clip}
 @media(max-width:640px){
   .pg-shape,.hero .shape{display:none}
 }
+
+/* ===== mobile overflow fix v2 — form/input intrinsic width =====
+   On phones with an enlarged system font size, form inputs' intrinsic
+   min-width (min-width:auto, from the default size attribute) can exceed
+   their grid/flex cell and force the contact card wider than the viewport.
+   Desktop Chrome stretches inputs to fit, so it never reproduces there.
+   Let the inputs and their containers shrink, and pin text scaling. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.contact .grid,.form-card,.field,.field.two,.info-list,.info-list .row{min-width:0}
+.field input,.field textarea{width:100%;min-width:0;max-width:100%}
+.info-list .row{flex-wrap:wrap;overflow-wrap:anywhere}
