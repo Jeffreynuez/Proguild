@@ -423,4 +423,4 @@ html{overflow-x:clip}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .contact .grid,.form-card,.field,.field.two,.info-list,.info-list .row{min-width:0}
 .field input,.field textarea{width:100%;min-width:0;max-width:100%}
-.info-list .row{flex-wrap:wrap;overflow-wrap:anywhere}
+.contact .info-list .row{align-items:flex-start;overflow-wrap:anywhere}
