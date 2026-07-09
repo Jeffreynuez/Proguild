@@ -328,7 +328,7 @@ ${team.members.map((m,i)=>`      <a class="person reveal" href="our-team.html#${
         <h2${ed('home.contact.title')}>${esc(H.contact.title)}</h2>
         <p class="lead"${ed('home.contact.lead')}>${esc(H.contact.lead)}</p>
         <div class="info-list">
-          <div class="row"><span class="ic">${ic('map-pin')}</span> <span><strong class="cname"${ed('global.contact.name')}>${esc(G.contact.name)}</strong><br>${esc(G.contact.address)}</span></div>
+          <div class="addr"><p class="cname"${ed('global.contact.name')}>${esc(G.contact.name)}</p><div class="row"><span class="ic">${ic('map-pin')}</span> ${esc(G.contact.address)}</div></div>
           <div class="row"><span class="ic">${ic('phone')}</span> <a href="tel:${esc(G.contact.phoneHref)}">${esc(G.contact.phone)}</a></div>
           <div class="row"><span class="ic">${ic('mail')}</span> <a href="mailto:${esc(G.contact.email)}">${esc(G.contact.email)}</a></div>
         </div>

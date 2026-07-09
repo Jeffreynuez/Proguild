@@ -428,4 +428,5 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 /* ===== contact section: mint background (separates it from the white team
    section now that the CTA band is removed) + company name above the address ===== */
 .contact{background:var(--mint-wash)}
-.contact .info-list .cname{font-family:var(--font-heading);font-weight:700;color:var(--ink);display:block;margin-bottom:2px}
+.contact .info-list .addr{display:grid;gap:4px}
+.contact .info-list .cname{font-family:var(--font-heading);font-weight:700;color:var(--ink);margin:0}
