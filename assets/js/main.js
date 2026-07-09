@@ -138,6 +138,14 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
   function tierFor(code){ return COVERAGE.states[code] || 'none'; }
   function colorFor(code){ const t = tierMap[tierFor(code)]; return t ? t.color : noneColor; }
 
+  const mapWrap = document.querySelector('.map-wrap');
+  function hideTip(){ if (tip) tip.classList.remove('show'); }
+  function anchorTip(el){
+    if (!tip || !mapWrap) return;
+    const mr = mapWrap.getBoundingClientRect(), r = el.getBoundingClientRect();
+    tip.style.left = (r.left - mr.left + r.width / 2) + 'px';
+    tip.style.top  = (r.top - mr.top) + 'px';
+  }
   document.querySelectorAll('#usMap .state').forEach(function(el){
     const code = el.dataset.state;
     el.style.fill = colorFor(code);
@@ -147,25 +155,23 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
     el.setAttribute('role','img');
     el.setAttribute('aria-label', label);
 
-    function showTip(x, y){
+    function showTip(){
       if (!tip) return;
       const t = tierMap[tierId] || tierMap.none;
       tip.innerHTML = '<span class="t-name">'+(stateNames[code]||code)+'</span><br><span class="t-tier"><span class="swatch" style="background:'+(t?t.color:noneColor)+'"></span>'+(t?t.label:'No Coverage')+'</span>';
-      tip.style.left = x + 'px'; tip.style.top = y + 'px'; tip.classList.add('show');
+      anchorTip(el);
+      tip.classList.add('show');
     }
-    function hideTip(){ if (tip) tip.classList.remove('show'); }
 
-    el.addEventListener('mousemove', e => showTip(e.clientX, e.clientY));
+    el.addEventListener('mouseenter', showTip);
     el.addEventListener('mouseleave', hideTip);
-    el.addEventListener('focus', function(){
-      const r = el.getBoundingClientRect();
-      showTip(r.left + r.width/2, r.top + r.height/2);
-    });
+    el.addEventListener('focus', showTip);
     el.addEventListener('blur', hideTip);
-    el.addEventListener('touchstart', function(e){
-      const t = e.touches[0]; if (t) showTip(t.clientX, t.clientY);
-    }, { passive:true });
+    el.addEventListener('touchstart', function(){ showTip(); }, { passive:true });
   });
+  /* keep the tip anchored to the map: never let it float over the page */
+  window.addEventListener('scroll', hideTip, { passive:true });
+  document.addEventListener('pointerdown', function(e){ if (!e.target.closest('#usMap .state')) hideTip(); });
 
   /* ---- Legend (generated from tiers) ---- */
   const legend = document.getElementById('legend');

@@ -186,7 +186,7 @@ img{max-width:100%;display:block}
 .us-map .state:hover,.us-map .state:focus{transform:translateY(-2px) scale(1.035);
   filter:drop-shadow(0 8px 14px rgba(29,35,39,.32));outline:none}
 .us-map .state.home{stroke:var(--dark);stroke-width:2.2}
-.map-tip{position:fixed;z-index:120;pointer-events:none;opacity:0;transform:translate(-50%,-118%);
+.map-tip{position:absolute;z-index:120;pointer-events:none;opacity:0;transform:translate(-50%,-118%);
   background:var(--dark);color:#fff;padding:9px 13px;border-radius:10px;font-size:.85rem;line-height:1.3;white-space:nowrap;
   box-shadow:0 8px 22px rgba(0,0,0,.28);transition:opacity .15s ease}
 .map-tip.show{opacity:1}
