@@ -42,6 +42,7 @@ const SHAPES = {
 };
 
 /* ---------- shared chrome ---------- */
+const OG_IMAGE = 'https://res.cloudinary.com/dlgc3fj6w/image/upload/c_fill,g_auto,w_1200,h_630,e_brightness:-18,f_jpg,q_auto/proguild/hero';
 const head = seo => `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +50,22 @@ const head = seo => `<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(seo.title)}</title>
 <meta name="description" content="${esc(seo.desc)}">
+<link rel="canonical" href="https://proguildfm.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Proguild Facility Management">
+<meta property="og:title" content="${esc(seo.title)}">
+<meta property="og:description" content="${esc(seo.desc)}">
+<meta property="og:url" content="https://proguildfm.com/">
+<meta property="og:image" content="${OG_IMAGE}">
+<meta property="og:image:secure_url" content="${OG_IMAGE}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Proguild Facility Management">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(seo.title)}">
+<meta name="twitter:description" content="${esc(seo.desc)}">
+<meta name="twitter:image" content="${OG_IMAGE}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
