@@ -42,6 +42,10 @@
           "path": "global.contact",
           "fields": [
             {
+              "k": "name",
+              "l": "Company name"
+            },
+            {
               "k": "address",
               "l": "Address (one line)"
             },

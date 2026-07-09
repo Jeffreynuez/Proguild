@@ -3,6 +3,7 @@
   "seoTitle": "Proguild Facility Management — Safe, Innovative, Socially Responsible",
   "seoDesc": "One dependable partner for every building system — commercial facility management and 24/7 emergency repair across Arizona.",
   "contact": {
+   "name": "Proguild Facility Management",
    "address": "101 N Colorado St, Ste 1201, Chandler, AZ 85225",
    "addressLine1": "101 N Colorado St, Ste 1201",
    "addressLine2": "Chandler, AZ 85225",
@@ -497,7 +498,7 @@
   },
   "contact": {
    "eyebrow": "Get in Touch",
-   "title": "Tell us what your building needs",
+   "title": "Become a trusted provider",
    "lead": "Send a request and a coordinator will follow up promptly. For active emergencies, call us — someone always answers.",
    "successTitle": "Request received.",
    "successText": "Thanks — a coordinator will reach out shortly.",
