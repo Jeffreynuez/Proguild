@@ -86,14 +86,14 @@
      "text": "Licensed, insured, uniformed crews who respect your property and your tenants."
     },
     {
-     "icon": "message-square-text",
-     "title": "Consistent updates",
-     "text": "Clear communication from dispatch to completion — you're never left guessing."
-    },
-    {
      "icon": "timer",
      "title": "Acknowledged in 5 minutes",
      "text": "Every work order is confirmed within five minutes, day or night."
+    },
+    {
+     "icon": "message-square-text",
+     "title": "Consistent updates",
+     "text": "Clear communication from dispatch to completion — you're never left guessing."
     },
     {
      "icon": "receipt-text",
