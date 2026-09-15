@@ -261,7 +261,7 @@ var COVERAGE = window.COVERAGE || { tiers: [], states: {} };
   document.addEventListener('keydown', function(e){ if(e.key==='Escape'&&selEl){ selEl.blur(); select(null); } }, true);
   window.addEventListener('message', function(e){
     var d=e.data||{};
-    if(d.jrd==='apply'&&d.edit){ document.querySelectorAll('[data-edit="'+d.edit+'"]').forEach(function(el){ if(!(el===selEl&&el.isContentEditable&&document.hasFocus()&&document.activeElement===el)) el.textContent=d.value; /* only skip while the caret is really in this element; selecting makes it contentEditable, which used to block every side-panel edit */ }); }
+    if(d.jrd==='apply'&&d.edit){ document.querySelectorAll('[data-edit="'+d.edit+'"]').forEach(function(el){ if(d.force||!(el===selEl&&el.isContentEditable&&document.hasFocus()&&document.activeElement===el)) el.textContent=d.value; /* only skip while the caret is really in this element; selecting makes it contentEditable, which used to block every side-panel edit */ }); }
     if(d.jrd==='styleapply'&&d.edit){ document.querySelectorAll('[data-edit="'+d.edit+'"]').forEach(function(el){ if(d.color) el.style.setProperty('color',d.color,'important'); else el.style.removeProperty('color'); if(d.align) el.style.setProperty('text-align',d.align,'important'); else el.style.removeProperty('text-align'); }); }
     if(d.jrd==='mapstate-apply'&&d.code){ var mel=document.querySelector('#usMap .state[data-state="'+d.code+'"]'); if(mel) mel.style.fill=d.color; }
   });
