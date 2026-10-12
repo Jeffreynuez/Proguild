@@ -257,6 +257,9 @@ img{max-width:100%;display:block}
 .site-footer .social a:hover{background:var(--accent);border-color:var(--accent)}
 .site-footer .bottom{border-top:1px solid rgba(255,255,255,.12)}
 .site-footer .bottom .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding:20px 24px;font-size:.82rem}
+.site-footer .bottom-right{display:flex;flex-wrap:wrap;gap:6px 18px}
+.site-footer .credit a{color:#fff;font-weight:600;text-decoration:underline;text-decoration-color:rgba(146,218,210,.55);text-underline-offset:3px}
+.site-footer .credit a:hover{color:var(--accent-light)}
 
 /* ============================================================
    FLOATING REQUEST BUTTON / MOBILE BAR

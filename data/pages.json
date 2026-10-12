@@ -31,7 +31,10 @@
    "blurb": "Commercial facility management & emergency repair. Safe, innovative, and socially responsible service across Arizona.",
    "linkedin": "https://linkedin.com",
    "copyright": "Proguild Facility Management. All rights reserved.",
-   "location": "Chandler, Arizona"
+   "location": "Chandler, Arizona",
+   "creditLead": "Site by",
+   "creditName": "JRD Animation",
+   "creditUrl": "https://jrdanimation.com"
   }
  },
  "home": {

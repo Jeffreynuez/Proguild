@@ -125,6 +125,18 @@
             {
               "k": "location",
               "l": "Location"
+            },
+            {
+              "k": "creditLead",
+              "l": "Credit lead-in (Site by)"
+            },
+            {
+              "k": "creditName",
+              "l": "Credit name (leave blank to hide the credit)"
+            },
+            {
+              "k": "creditUrl",
+              "l": "Credit link"
             }
           ]
         }

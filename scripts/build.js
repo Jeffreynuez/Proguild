@@ -142,7 +142,7 @@ function footer(pathPrefix) {
     </div>
   </div>
   <div class="bottom">
-    <div class="wrap"><span>© <span id="year"></span> <span${ed('global.footer.copyright')}>${esc(G.footer.copyright)}</span></span><span${ed('global.footer.location')}>${esc(G.footer.location)}</span></div>
+    <div class="wrap"><span>© <span id="year"></span> <span${ed('global.footer.copyright')}>${esc(G.footer.copyright)}</span></span><span class="bottom-right"><span${ed('global.footer.location')}>${esc(G.footer.location)}</span>${G.footer.creditName ? `<span class="credit"><span${ed('global.footer.creditLead')}>${esc(G.footer.creditLead || '')}</span> <a href="${esc(G.footer.creditUrl || 'https://jrdanimation.com')}" target="_blank" rel="noopener"${ed('global.footer.creditName')}>${esc(G.footer.creditName)}</a></span>` : ''}</span></div>
   </div>
 </footer>`;
 }
