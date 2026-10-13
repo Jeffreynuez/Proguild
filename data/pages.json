@@ -34,8 +34,10 @@
    "location": "Chandler, Arizona",
    "creditLead": "Site built by",
    "creditName": "JRD Animation",
-   "creditUrl": "https://jrdanimation.com"
-  }
+   "creditUrl": "https://jrdanimation.com",
+   "aiNote": "The people in the hero video, Why Choose Us and Company Principles are AI-generated illustrations, not Proguild employees. The photos of our team are real."
+  },
+  "noindex": false
  },
  "home": {
   "hero": {
@@ -46,7 +48,10 @@
    "cta1Href": "#contact",
    "cta2": "Explore Services",
    "cta2Href": "#services",
-   "bg": "CDN:image/upload/f_auto,q_auto/proguild/hero"
+   "bg": "CDN:image/upload/f_auto,q_auto/proguild/hero",
+   "video": "assets/video/revamp/hero-loop.mp4",
+   "videoMobile": "assets/video/revamp/hero-loop-mobile.mp4",
+   "aiNote": "Video scenes are AI-generated illustrations, not Proguild staff."
   },
   "stats": [
    {
@@ -87,24 +92,34 @@
     {
      "icon": "badge-check",
      "title": "Professional service",
-     "text": "Licensed, insured, uniformed crews who respect your property and your tenants."
+     "text": "Licensed, insured, uniformed crews who respect your property and your tenants.",
+     "poster": "assets/img/revamp/why-professional.jpg",
+     "video": "assets/video/revamp/why-professional.mp4"
     },
     {
      "icon": "timer",
      "title": "Acknowledged in 5 minutes",
-     "text": "Every work order is confirmed within five minutes, day or night."
+     "text": "Every work order is confirmed within five minutes, day or night.",
+     "poster": "assets/img/revamp/why-acknowledged.jpg",
+     "video": "assets/video/revamp/why-acknowledged.mp4"
     },
     {
      "icon": "message-square-text",
      "title": "Consistent updates",
-     "text": "Clear communication from dispatch to completion — you're never left guessing."
+     "text": "Clear communication from dispatch to completion — you're never left guessing.",
+     "poster": "assets/img/revamp/why-updates.jpg",
+     "video": "assets/video/revamp/why-updates.mp4"
     },
     {
      "icon": "receipt-text",
      "title": "Transparent invoicing",
-     "text": "Management fee is identified separately, so you always know exactly what you're paying for."
+     "text": "Management fee is identified separately, so you always know exactly what you're paying for.",
+     "poster": "assets/img/revamp/why-invoicing.jpg",
+     "video": "assets/video/revamp/why-invoicing.mp4"
     }
-   ]
+   ],
+   "aiNote": "These scenes are AI-generated illustrations, not Proguild staff.",
+   "aiLinkLabel": "Meet our real team"
   },
   "principles": {
    "eyebrow": "Company Principles",
@@ -113,34 +128,47 @@
     {
      "icon": "heart-handshake",
      "title": "Faith",
-     "body": "We lead with conviction and do what's right even when no one is watching."
+     "body": "We lead with conviction and do what's right even when no one is watching.",
+     "image": "assets/img/revamp/principle-faith.jpg",
+     "tagline": "Right, even unseen."
     },
     {
      "icon": "users",
      "title": "Customer Focus",
-     "body": "Your priorities set ours. Every decision starts with the people we serve."
+     "body": "Your priorities set ours. Every decision starts with the people we serve.",
+     "image": "assets/img/revamp/principle-customer.jpg",
+     "tagline": "Your priorities first."
     },
     {
      "icon": "combine",
      "title": "Synergy",
-     "body": "One coordinated team across every trade, working better together than apart."
+     "body": "One coordinated team across every trade, working better together than apart.",
+     "image": "assets/img/revamp/principle-synergy.jpg",
+     "tagline": "Every trade, one team."
     },
     {
      "icon": "messages-square",
      "title": "Effective Communication",
-     "body": "Clear, timely, honest updates at every step — no surprises."
+     "body": "Clear, timely, honest updates at every step — no surprises.",
+     "image": "assets/img/revamp/principle-communication.jpg",
+     "tagline": "Updates at every step."
     },
     {
      "icon": "key-round",
      "title": "Empowerment",
-     "body": "We equip our people to make smart calls and own the outcome."
+     "body": "We equip our people to make smart calls and own the outcome.",
+     "image": "assets/img/revamp/principle-empowerment.jpg",
+     "tagline": "Trusted to own it."
     },
     {
      "icon": "award",
      "title": "Excellence",
-     "body": "Good enough never is. We hold every job to a standard we'd accept ourselves."
+     "body": "Good enough never is. We hold every job to a standard we'd accept ourselves.",
+     "image": "assets/img/revamp/principle-excellence.jpg",
+     "tagline": "Good enough never is."
     }
-   ]
+   ],
+   "aiNote": "Pictures are AI-generated illustrations, not Proguild staff."
   },
   "process": {
    "eyebrow": "How It Works",
@@ -161,6 +189,19 @@
     {
      "title": "Completed with updates",
      "body": "Work done right, with status updates through to sign-off."
+    }
+   ],
+   "ticketTitle": "Work order",
+   "ticketDetail": "HVAC · Rooftop unit not cooling",
+   "checklist": [
+    {
+     "label": "Crew on site"
+    },
+    {
+     "label": "Repair complete"
+    },
+    {
+     "label": "Signed off"
     }
    ]
   },
@@ -190,80 +231,108 @@
      "cat": "emergency",
      "icon": "wrench",
      "title": "Plumbing",
-     "desc": "Leaks, fixtures, repipes, and 24/7 emergency response."
+     "desc": "Leaks, fixtures, repipes, and 24/7 emergency response.",
+     "x": 49.5,
+     "y": 42
     },
     {
      "cat": "emergency",
      "icon": "zap",
      "title": "Electrical",
-     "desc": "Repairs, troubleshooting, and code-compliant fixes."
+     "desc": "Repairs, troubleshooting, and code-compliant fixes.",
+     "x": 28.5,
+     "y": 55
     },
     {
      "cat": "maintenance",
      "icon": "wind",
      "title": "HVAC",
-     "desc": "Heating, cooling, and preventive maintenance plans."
+     "desc": "Heating, cooling, and preventive maintenance plans.",
+     "x": 36,
+     "y": 25
     },
     {
      "cat": "specialty",
      "icon": "key-round",
      "title": "Locksmith",
-     "desc": "Rekeys, hardware, and secure access control."
+     "desc": "Rekeys, hardware, and secure access control.",
+     "x": 52.5,
+     "y": 58.5
     },
     {
      "cat": "maintenance",
      "icon": "layout-grid",
      "title": "Flooring",
-     "desc": "Repair, refinish, and full replacement."
+     "desc": "Repair, refinish, and full replacement.",
+     "x": 35,
+     "y": 63
     },
     {
      "cat": "specialty",
      "icon": "construction",
      "title": "Parking Lot & Asphalt",
-     "desc": "Sealcoating, striping, and pothole repair."
+     "desc": "Sealcoating, striping, and pothole repair.",
+     "x": 55,
+     "y": 83
     },
     {
      "cat": "specialty",
      "icon": "door-open",
      "title": "Overhead Doors",
-     "desc": "Service, spring replacement, and adjustments."
+     "desc": "Service, spring replacement, and adjustments.",
+     "x": 19,
+     "y": 53
     },
     {
      "cat": "emergency",
      "icon": "shield",
      "title": "Emergency Board-Ups",
-     "desc": "Rapid storefront securing after break-ins or damage."
+     "desc": "Rapid storefront securing after break-ins or damage.",
+     "x": 60,
+     "y": 54
     },
     {
      "cat": "specialty",
      "icon": "lightbulb",
      "title": "Lighting Retrofits",
-     "desc": "Energy-efficient interior and exterior lighting."
+     "desc": "Energy-efficient interior and exterior lighting.",
+     "x": 44,
+     "y": 37.5
     },
     {
      "cat": "specialty",
      "icon": "paint-roller",
      "title": "Building Refreshes",
-     "desc": "Paint, finishes, and cosmetic improvements."
+     "desc": "Paint, finishes, and cosmetic improvements.",
+     "x": 76,
+     "y": 25
     },
     {
      "cat": "maintenance",
      "icon": "hammer",
      "title": "General Maintenance",
-     "desc": "Handyman work and ongoing upkeep of all kinds."
+     "desc": "Handyman work and ongoing upkeep of all kinds.",
+     "x": 68.5,
+     "y": 51
     },
     {
      "cat": "maintenance",
      "icon": "clipboard-check",
      "title": "Preventive Programs",
-     "desc": "Scheduled inspections that catch issues early."
+     "desc": "Scheduled inspections that catch issues early.",
+     "x": 56,
+     "y": 19
     }
-   ]
+   ],
+   "lead": "Tap a spot on the building to see what we take care of.",
+   "building": "assets/img/revamp/services-building.jpg",
+   "buildingAlt": "A commercial building with its parking lot, rooftop units, storefront and loading door",
+   "requestLabel": "Request this service"
   },
   "coverage": {
    "eyebrow": "Service Coverage",
    "title": "Where we show up",
-   "lead": "Hover or tap a state to see its coverage level.",
+   "lead": "Every state lights up from our home base in Chandler, Arizona. Hover or tap a state to see its coverage.",
    "tiers": [
     {
      "id": "strong",
@@ -486,7 +555,10 @@
      "code": "WA",
      "tier": "strong"
     }
-   ]
+   ],
+   "hqLabel": "Headquarters",
+   "hqCity": "Chandler, AZ",
+   "counterLabel": "states covered"
   },
   "teamTeaser": {
    "eyebrow": "Our Team",
@@ -502,7 +574,7 @@
   "contact": {
    "eyebrow": "Get in Touch",
    "title": "Become a trusted provider",
-   "lead": "Send a request and a coordinator will follow up promptly. For active emergencies, call us — someone always answers.",
+   "lead": "Send a request and a coordinator will follow up promptly or call us — someone always answers.",
    "successTitle": "Request received.",
    "successText": "Thanks — a coordinator will reach out shortly.",
    "formAction": "https://api.web3forms.com/submit",
