@@ -15,6 +15,7 @@ const out = (f, html) => { fs.writeFileSync(path.join(ROOT, f), html); console.l
 
 const pages = D('pages.json'), team = D('team.json'), privacy = D('privacy.json'), theme = D('theme.json');
 const G = pages.global, H = pages.home;
+const NOINDEX = G.noindex === true || G.noindex === 'true';
 const MAP_SVG = fs.readFileSync(path.join(__dirname, 'map.svg'), 'utf8');
 
 const ed  = p => ` data-edit="pages.json#${p}"`;
@@ -50,7 +51,8 @@ const head = seo => `<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(seo.title)}</title>
 <meta name="description" content="${esc(seo.desc)}">
-<link rel="canonical" href="https://proguildfm.com/">
+${NOINDEX ? '<meta name="robots" content="noindex, nofollow">\n' : ''}<link rel="canonical" href="https://proguildfm.com/">
+<script>document.documentElement.classList.add('js')</script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Proguild Facility Management">
 <meta property="og:title" content="${esc(seo.title)}">
@@ -72,6 +74,7 @@ const head = seo => `<!DOCTYPE html>
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <link href="assets/css/main.css" rel="stylesheet">
 <link href="assets/css/theme.css" rel="stylesheet">
+<link href="assets/css/revamp.css" rel="stylesheet">
 </head>
 <body>`;
 
@@ -142,7 +145,8 @@ function footer(pathPrefix) {
     </div>
   </div>
   <div class="bottom">
-    <div class="wrap"><span>© <span id="year"></span> <span${ed('global.footer.copyright')}>${esc(G.footer.copyright)}</span></span><span class="bottom-right"><span${ed('global.footer.location')}>${esc(G.footer.location)}</span>${G.footer.creditName ? `<span class="credit"><span${ed('global.footer.creditLead')}>${esc(G.footer.creditLead || '')}</span> <a href="${esc(G.footer.creditUrl || 'https://jrdanimation.com')}" target="_blank" rel="noopener"${ed('global.footer.creditName')}>${esc(G.footer.creditName)}</a></span>` : ''}</span></div>
+    <div class="wrap"><span>© <span id="year"></span> <span${ed('global.footer.copyright')}>${esc(G.footer.copyright)}</span></span><span class="bottom-right"><span${ed('global.footer.location')}>${esc(G.footer.location)}</span>${G.footer.creditName ? `<span class="credit"><span${ed('global.footer.creditLead')}>${esc(G.footer.creditLead || '')}</span> <a href="${esc(G.footer.creditUrl || 'https://jrdanimation.com')}" target="_blank" rel="noopener"${ed('global.footer.creditName')}>${esc(G.footer.creditName)}</a></span>` : ''}</span></div>${pathPrefix === '' && G.footer.aiNote ? `
+    <div class="wrap ai-foot"><span${ed('global.footer.aiNote')}>${esc(G.footer.aiNote)}</span></div>` : ''}
   </div>
 </footer>`;
 }
@@ -158,6 +162,7 @@ function coverageScript() {
 const tail = pathPrefix => `
 ${coverageScript()}
 <script src="assets/js/main.js"></script>
+<script src="assets/js/revamp.js"></script>
 </body>
 </html>
 `;
@@ -168,7 +173,9 @@ function buildHome() {
 <main id="top">
 
 <section class="hero" id="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg${H.hero.video ? ' has-video' : ''}" id="heroBg">${H.hero.video ? `
+    <video class="hero-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-src="${esc(cdn(H.hero.video))}"${H.hero.videoMobile ? ` data-src-mobile="${esc(cdn(H.hero.videoMobile))}"` : ''}></video>` : ''}
+  </div>
   <div class="hero-overlay"></div>
   <div class="shape s1" data-depth="0.18"></div>
   <div class="shape s2" data-depth="0.30"></div>
@@ -181,7 +188,8 @@ function buildHome() {
       <div class="hero-actions">
         <a href="${esc(H.hero.cta1Href)}" class="btn lg"${ed('home.hero.cta1')}>${esc(H.hero.cta1)} ${ic('arrow-right')}</a>
         <a href="${esc(H.hero.cta2Href)}" class="btn lg on-dark"${ed('home.hero.cta2')}>${esc(H.hero.cta2)}</a>
-      </div>
+      </div>${H.hero.aiNote ? `
+      <p class="ai-note"${ed('home.hero.aiNote')}>${esc(H.hero.aiNote)}</p>` : ''}
     </div>
   </div>
 </section>`;
@@ -225,9 +233,21 @@ ${H.stats.map((s,i)=>`    <div class="stat"${edi('pages.json','home.stats',i)}><
       <span class="eyebrow"${ed('home.why.eyebrow')}>${esc(H.why.eyebrow)}</span>
       <h2${ed('home.why.title')}>${esc(H.why.title)}</h2>
     </div>
-    <div class="why-grid">
-${H.why.items.map((it,i)=>`      <div class="guarantee reveal"${edi('pages.json','home.why.items',i)}><div class="ic">${ic(it.icon)}</div><h4${ed('home.why.items.'+i+'.title')}>${esc(it.title)}</h4><p${ed('home.why.items.'+i+'.text')}>${esc(it.text)}</p></div>`).join('\n')}
-    </div>
+    <div class="vcards" id="whyCards">
+${H.why.items.map((it,i)=>`      <article class="vcard reveal" tabindex="0"${edi('pages.json','home.why.items',i)}>
+        <div class="vmedia">
+          <img src="${esc(cdn(it.poster))}" alt="" loading="lazy" decoding="async">${it.video ? `
+          <video muted loop playsinline preload="none" poster="${esc(cdn(it.poster))}" data-src="${esc(cdn(it.video))}"></video>` : ''}
+        </div>
+        <div class="vshade"></div>
+        <div class="vbody">
+          <span class="vicon">${ic(it.icon)}</span>
+          <h4${ed('home.why.items.'+i+'.title')}>${esc(it.title)}</h4>
+          <p${ed('home.why.items.'+i+'.text')}>${esc(it.text)}</p>
+        </div>
+      </article>`).join('\n')}
+    </div>${H.why.aiNote ? `
+    <p class="ai-note reveal"><span${ed('home.why.aiNote')}>${esc(H.why.aiNote)}</span>${H.why.aiLinkLabel ? ` <a href="our-team.html"${ed('home.why.aiLinkLabel')}>${esc(H.why.aiLinkLabel)}</a> ${ic('arrow-right')}` : ''}</p>` : ''}
   </div>
 </section>`;
 
@@ -238,38 +258,85 @@ ${H.why.items.map((it,i)=>`      <div class="guarantee reveal"${edi('pages.json'
       <span class="eyebrow on-dark"${ed('home.principles.eyebrow')}>${esc(H.principles.eyebrow)}</span>
       <h2${ed('home.principles.title')}>${esc(H.principles.title)}</h2>
     </div>
-    <div class="pgrid">
-${H.principles.items.map((it,i)=>`      <div class="principle reveal"${edi('pages.json','home.principles.items',i)}><div class="ic">${ic(it.icon)}</div><h3${ed('home.principles.items.'+i+'.title')}>${esc(it.title)}</h3><p${ed('home.principles.items.'+i+'.body')}>${esc(it.body)}</p></div>`).join('\n')}
-    </div>
+    <div class="bento" id="principleBento">
+${H.principles.items.map((it,i)=>`      <article class="ptile p${i+1} reveal" tabindex="0"${edi('pages.json','home.principles.items',i)}>
+        <img src="${esc(cdn(it.image))}" alt="" loading="lazy" decoding="async">
+        <div class="pshade"></div>
+        <div class="pbody">
+          <h3${ed('home.principles.items.'+i+'.title')}>${esc(it.title)}</h3>
+          <p class="ptag"${ed('home.principles.items.'+i+'.tagline')}>${esc(it.tagline || '')}</p>
+          <p class="pmore"${ed('home.principles.items.'+i+'.body')}>${esc(it.body)}</p>
+        </div>
+      </article>`).join('\n')}
+    </div>${H.principles.aiNote ? `
+    <p class="ai-note reveal"${ed('home.principles.aiNote')}>${esc(H.principles.aiNote)}</p>` : ''}
   </div>
 </section>`;
 
+  const P = H.process;
   const process = `
 <section class="section process" id="process">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <span class="eyebrow"${ed('home.process.eyebrow')}>${esc(H.process.eyebrow)}</span>
-      <h2${ed('home.process.title')}>${esc(H.process.title)}</h2>
-    </div>
-    <div class="track" id="processTrack">
-      <div class="baseline"></div>
-${H.process.steps.map((s,i)=>`      <div class="step reveal"${edi('pages.json','home.process.steps',i)}><div class="dot">${i+1}</div><h4${ed('home.process.steps.'+i+'.title')}>${esc(s.title)}</h4><p${ed('home.process.steps.'+i+'.body')}>${esc(s.body)}</p></div>`).join('\n')}
+  <div class="story" id="processStory">
+    <div class="story-pin">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow"${ed('home.process.eyebrow')}>${esc(P.eyebrow)}</span>
+          <h2${ed('home.process.title')}>${esc(P.title)}</h2>
+        </div>
+        <div class="story-stage">
+          <div class="story-track" aria-hidden="true">
+            <div class="story-line"><div class="story-fill" id="storyFill"></div></div>
+${P.steps.map((s,i)=>`            <div class="snode" style="left:${12.5 + i*25}%"><div class="sdot">${i+1}</div></div>`).join('\n')}
+            <div class="clock" id="storyClock"><svg viewBox="0 0 88 88"><circle cx="44" cy="44" r="38" class="clock-bg"/><circle cx="44" cy="44" r="38" class="clock-arc"/></svg></div>
+            <div class="van" id="storyVan">${ic('truck')}</div>
+            <div class="ticket" id="storyTicket">
+              <div class="t-head">${ic('clipboard-list')}<b${ed('home.process.ticketTitle')}>${esc(P.ticketTitle || 'Work order')}</b><span class="t-status" id="ticketStatus">Sent</span></div>
+              <div class="t-detail"${ed('home.process.ticketDetail')}>${esc(P.ticketDetail || '')}</div>
+              <div class="t-eta" id="ticketEta">${ic('clock')}<span>Crew on the way</span></div>
+              <ul class="t-check" id="ticketCheck">
+${(P.checklist || []).map((c,i)=>`                <li${edi('pages.json','home.process.checklist',i)}>${ic('check')}<span${ed('home.process.checklist.'+i+'.label')}>${esc(typeof c === 'string' ? c : c.label)}</span></li>`).join('\n')}
+              </ul>
+            </div>
+          </div>
+          <div class="story-steps">
+${P.steps.map((s,i)=>`            <div class="sstep reveal" data-step="${i}"${edi('pages.json','home.process.steps',i)}><span class="snum">${i+1}</span><h4${ed('home.process.steps.'+i+'.title')}>${esc(s.title)}</h4><p${ed('home.process.steps.'+i+'.body')}>${esc(s.body)}</p></div>`).join('\n')}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>`;
 
+  const S = H.services;
+  const catLabel = c => { const f = S.filters.find(x => x.cat === c); return f ? f.label : c; };
   const services = `
 <section class="section services" id="services">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="eyebrow"${ed('home.services.eyebrow')}>${esc(H.services.eyebrow)}</span>
-      <h2${ed('home.services.title')}>${esc(H.services.title)}</h2>
+      <span class="eyebrow"${ed('home.services.eyebrow')}>${esc(S.eyebrow)}</span>
+      <h2${ed('home.services.title')}>${esc(S.title)}</h2>
+      ${S.lead ? `<p class="lead"${ed('home.services.lead')}>${esc(S.lead)}</p>` : ''}
     </div>
     <div class="svc-filter reveal" id="svcFilter">
-${H.services.filters.map((f,i)=>`      <button class="chip${i===0?' active':''}" data-cat="${esc(f.cat)}">${esc(f.label)}</button>`).join('\n')}
+${S.filters.map((f,i)=>`      <button class="chip${i===0?' active':''}" data-cat="${esc(f.cat)}">${esc(f.label)}</button>`).join('\n')}
     </div>
-    <div class="svc-grid" id="svcGrid">
-${H.services.items.map((it,i)=>`      <div class="service reveal" data-cat="${esc(it.cat)}"${edi('pages.json','home.services.items',i)}><div class="ic">${ic(it.icon)}</div><h4${ed('home.services.items.'+i+'.title')}>${esc(it.title)}</h4><p class="desc"${ed('home.services.items.'+i+'.desc')}>${esc(it.desc)}</p></div>`).join('\n')}
+    <div class="explorer reveal" id="explorer">
+      <div class="bld">
+        <img src="${esc(cdn(S.building))}" alt="${esc(S.buildingAlt || '')}" loading="lazy" decoding="async">
+${S.items.map((it,i)=>`        <button class="hot" type="button" data-i="${i}" data-cat="${esc(it.cat)}" style="left:${Number(it.x)||50}%;top:${Number(it.y)||50}%" aria-label="${esc(it.title)}"><span class="ring"></span><span class="core">${ic(it.icon)}</span><span class="hl">${esc(it.title)}</span></button>`).join('\n')}
+      </div>
+      <div class="svc-panel" id="svcPanel" aria-live="polite">
+${S.items.map((it,i)=>`        <div class="svc-card${i===0?' on':''}" data-i="${i}" data-cat="${esc(it.cat)}"${edi('pages.json','home.services.items',i)}>
+          <div class="svc-ic">${ic(it.icon)}</div>
+          <span class="svc-cat">${esc(catLabel(it.cat))}</span>
+          <h3${ed('home.services.items.'+i+'.title')}>${esc(it.title)}</h3>
+          <p${ed('home.services.items.'+i+'.desc')}>${esc(it.desc)}</p>
+          <a href="#contact" class="btn svc-req" data-service="${esc(it.title)}">${esc(S.requestLabel || 'Request this service')} ${ic('arrow-right')}</a>
+        </div>`).join('\n')}
+      </div>
+    </div>
+    <div class="svc-list" id="svcList">
+${S.items.map((it,i)=>`      <button class="svc-pill${i===0?' on':''}" type="button" data-i="${i}" data-cat="${esc(it.cat)}">${ic(it.icon)}<span>${esc(it.title)}</span></button>`).join('\n')}
     </div>
   </div>
 </section>`;
@@ -282,7 +349,8 @@ ${H.services.items.map((it,i)=>`      <div class="service reveal" data-cat="${es
       <h2${ed('home.coverage.title')}>${esc(H.coverage.title)}</h2>
       <p class="lead"${ed('home.coverage.lead')}>${esc(H.coverage.lead)}</p>
     </div>
-    <div class="map-wrap reveal">
+    <div class="cov-count reveal"><span class="num" id="covCount">${H.coverage.states.filter(s => s.tier !== 'none' && s.code !== 'DC').length}</span><span class="lbl"${ed('home.coverage.counterLabel')}>${esc(H.coverage.counterLabel || 'states covered')}</span></div>
+    <div class="map-wrap reveal" data-hq-label="${esc(H.coverage.hqLabel || 'Headquarters')}" data-hq-city="${esc(H.coverage.hqCity || '')}">
       ${MAP_SVG}
       <div class="map-tip" id="mapTip"></div>
     </div>
@@ -346,6 +414,7 @@ ${team.members.map((m,i)=>`      <a class="person reveal" href="our-team.html#${
           </div>
           <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" required autocomplete="tel"></div>
           <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="svc">Service needed</label><select id="svc" name="service"><option value="">Choose a service (optional)</option>${H.services.items.map(it => `<option>${esc(it.title)}</option>`).join('')}<option>Something else</option></select></div>
           <div class="field"><label for="cm">Comments</label><textarea id="cm" name="comments" placeholder="Tell us about the property and the service you need…"></textarea></div>
           <button type="submit" class="btn lg" style="width:100%;justify-content:center">Send Request ${ic('arrow-right')}</button>
         </form>
@@ -408,6 +477,7 @@ ${P.sections.map((s,i)=>`    <h2${edf('privacy.json','page.sections.'+i+'.headin
 
 /* ---------- run ---------- */
 buildTheme();
+fs.writeFileSync(path.join(ROOT, 'robots.txt'), NOINDEX ? 'User-agent: *\nDisallow: /\n' : 'User-agent: *\nAllow: /\n'); console.log('built robots.txt');
 out('index.html', buildHome());
 out('our-team.html', buildTeam());
 out('privacy-policy.html', buildPrivacy());
